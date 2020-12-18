@@ -4,47 +4,47 @@
 
 <head>
 
-<meta charset="utf-8">
+  <meta charset="utf-8">
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Contáctanos</title>
+  <title>Contáctanos</title>
 
-<!-- Fav Icon -->
+  <!-- Fav Icon -->
 
-<link rel="shortcut icon" href="favicon.ico">
-
-
-
-<!-- Owl carousel -->
-
-<link href="css/owl.carousel.css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
 
 
 
-<!-- Bootstrap -->
+  <!-- Owl carousel -->
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-
-
-<!-- Font Awesome -->
-
-<link href="css/font-awesome.css" rel="stylesheet">
+  <link href="css/owl.carousel.css" rel="stylesheet">
 
 
 
-<!-- Custom Style -->
+  <!-- Bootstrap -->
 
-<link href="css/main.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
 
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- Font Awesome -->
 
-<!--[if lt IE 9]>
+  <link href="css/font-awesome.css" rel="stylesheet">
+
+
+
+  <!-- Custom Style -->
+
+  <link href="css/main.css" rel="stylesheet">
+
+
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+
+  <!--[if lt IE 9]>
 
   <script src="js/html5shiv.min.js"></script>
 
@@ -58,29 +58,46 @@
 
 <body>
 
-<!-- Header start -->
+  <!-- Header start -->
 
 
 
-<?php include("estructura/menu.php"); ?>
+  <?php include("estructura/menu.php");
+  
+  if(isset($_POST['name'])){
 
-<!-- Header end --> <!-- Page Title start -->
+    $para      = 'gonzalezalexis034@gmail.com';
+    $titulo    = 'Solicitud de Contacto de '.$_POST['name'];
+    $mensaje   = "Persona que solicita: ".$_POST['name']."\r\n Municipalidad: ".$_POST['municipalidad']."\r\n Detalles de la solicitud:".$_POST['comments'];
+    $cabeceras = 'From: gonzalezalexis034@gmail.com' . "\r\n" .
+    'Reply-To: gonzalezalexis034@gmail.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
 
-<div class="pageTitle">
+    mail($para, $titulo, $mensaje, $cabeceras);
 
-  <div class="container">
+  }
+  ?>
 
-    <div class="row">
+  <!-- Header end -->
+  <!-- Page Title start -->
 
-      <div class="col-md-6 col-sm-6">
+  <div class="pageTitle">
 
-        <h1 class="page-heading">Contáctanos</h1>
+    <div class="container">
 
-      </div>
+      <div class="row">
 
-      <div class="col-md-6 col-sm-6">
+        <div class="col-md-6 col-sm-6">
 
- 
+          <h1 class="page-heading">Contáctanos</h1>
+
+        </div>
+
+        <div class="col-md-6 col-sm-6">
+
+
+
+        </div>
 
       </div>
 
@@ -88,25 +105,23 @@
 
   </div>
 
-</div>
-
-<!-- Page Title End --> 
+  <!-- Page Title End -->
 
 
 
-<!-- Contact us -->
+  <!-- Contact us -->
 
-<div class="inner-page">
+  <div class="inner-page">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="contact-wrap">
+      <div class="contact-wrap">
 
-      <div class="row">
+        <div class="row">
 
-        <div class="col-md-12 column">
+          <div class="col-md-12 column">
 
-          <!--<div class="title"> <span>We Are Here For Your Help</span>
+            <!--<div class="title"> <span>We Are Here For Your Help</span>
 
             <h2>GET IN TOUCH FAST</h2>
 
@@ -118,7 +133,7 @@
 
         </div>
 
-        
+
 
         <!-- Contact Info -->
         <!-- 
@@ -137,8 +152,8 @@
 
             </div> -->
 
-            <!-- Contact Info -->
-            <!-- 
+        <!-- Contact Info -->
+        <!-- 
 
             <div class="contact"> <span><i class="fa fa-envelope"></i></span>
 
@@ -152,8 +167,8 @@
 
             </div> -->
 
-            <!-- Contact Info -->
-            <!-- 
+        <!-- Contact Info -->
+        <!-- 
 
             <div class="contact"> <span><i class="fa fa-phone"></i></span>
 
@@ -167,78 +182,75 @@
 
             </div>  -->
 
-            <!-- Contact Info --> 
+        <!-- Contact Info -->
 
-          </div>
+      </div>
 
-          <!-- Contact Now --> 
+      <!-- Contact Now -->
 
-        </div>
+    </div>
 
-        
 
-        <!-- Contact form -->
 
-        <div class="col-md-12 column">
+    <!-- Contact form -->
 
-          <div class="contact-form">
+    <div class="container">
+      Envianos un correo electronico, completando el siguiente formulario. 
+      <hr>
+      <div class="contact-form">
 
-            <div id="message"></div>
+        <div id="message"></div>
 
-            <form method="post" action="" name="contactform" id="contactform">
+        <form method="POST" action="contactanos.php" name="contactform" id="contactform">
 
-              <div class="row">
+          <div class="row">
 
-                <div class="col-md-6">
+            <div class="col-md-6">
 
-                  <input name="name" type="text" id="name" placeholder="Nombre completo">
+              <input name="name" type="text" id="name" placeholder="Nombre completo" class="form-control" required>
 
-                </div>
+            </div>
 
-                <div class="col-md-6">
+            <div class="col-md-6">
 
-                  <input type="text" name="phone" placeholder="Numero de teléfono">
+              <input type="text" name="phone" placeholder="Numero de teléfono" class="form-control" required>
 
-                </div>
+            </div>
 
-                <div class="col-md-6">
+            <div class="col-md-6">
 
-                  <input name="email" type="text" id="email" placeholder="Correo">
+              <input name="email" type="email" id="email" placeholder="Correo electrónico" class="form-control" required>
 
-                </div>
+            </div>
 
-                <div class="col-md-6">
+            <div class="col-md-6">
 
-                    <select name="municipalidad" style="height: 2.8vw;padding: 0px 0px;margin-bottom: 1vw;" class="form-control">
-              <option > Municipalidad </option>
+              <select name="municipalidad" class="form-control mb-1" required>
+                <option value="null" disabled selected> Municipalidad a la que perteneces </option>
                 <option value="1">Quillota</option>
                 <option value="2">La calera</option>
                 <option value="3">Hijuelas</option>
                 <option value="4">Nogales</option>
                 <option value="5">La Cruz</option>
-            </select>
+              </select>
 
-                </div>
+            </div>
 
-                <div class="col-md-12">
+            <div class="col-md-12">
 
-                  <textarea rows="4" name="comments" id="comments" placeholder="Detalles"></textarea>
+              <textarea  name="comments" id="comments" placeholder="Detalles de tu consulta..." class="form-control" required></textarea>
 
-                </div>
+            </div>
 
-                <div class="col-md-12">
+            <div class="col-md-12">
 
-                  <button title="" class="button" type="submit" id="submit">Enviar ahora</button>
+              <button title="" class="btn btn-success" type="submit" id="submit">Enviar ahora</button>
 
-                </div>
-
-              </div>
-
-            </form>
+            </div>
 
           </div>
 
-        </div>
+        </form>
 
       </div>
 
@@ -246,61 +258,65 @@
 
   </div>
 
-</div>
-
-
-
-<!-- Google Map -->
-
-<div class="googlemap">
-
- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53616.258427300854!2d-71.28326244956193!3d-32.871292071419525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689cd8fecd724c7%3A0xefe20583632b9e90!2sQuillota%2C%20Valpara%C3%ADso%2C%20Chile!5e0!3m2!1ses-419!2sve!4v1607349512361!5m2!1ses-419!2sve" ></iframe>
-
-</div>
-
-
-
-<!--Footer-->
-
-
-
-<?php include("estructura/footer.php"); ?>
-
-<!--Footer end--> 
-
-
-
-<!--Copyright-->
-
-<div class="copyright">
-
-  <div class="container">
-
-    <div class="bttxt">Copyright &copy; 2017 Your Company Name. All Rights Reserved. Design by: <a href="http://graphicriver.net/user/ecreativesol" target="_blank">eCreativeSolutions</a></div>
+  </div>
 
   </div>
 
-</div>
+  </div>
 
 
 
-<!-- Bootstrap's JavaScript --> 
+  <!-- Google Map -->
 
-<script src="js/jquery-2.1.4.min.js"></script> 
+  <div class="googlemap">
 
-<script src="js/bootstrap.min.js"></script> 
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53616.258427300854!2d-71.28326244956193!3d-32.871292071419525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689cd8fecd724c7%3A0xefe20583632b9e90!2sQuillota%2C%20Valpara%C3%ADso%2C%20Chile!5e0!3m2!1ses-419!2sve!4v1607349512361!5m2!1ses-419!2sve"></iframe>
 
-
-
-<!-- Owl carousel --> 
-
-<script src="js/owl.carousel.js"></script> 
+  </div>
 
 
 
-<!-- Custom js --> 
+  <!--Footer-->
 
-<script src="js/script.js"></script>
+
+
+  <?php include("estructura/footer.php"); ?>
+
+  <!--Footer end-->
+
+
+
+  <!--Copyright-->
+
+  <div class="copyright">
+
+    <div class="container">
+
+      <div class="bttxt">Copyright &copy; 2017 Your Company Name. All Rights Reserved. Design by: <a href="http://graphicriver.net/user/ecreativesol" target="_blank">eCreativeSolutions</a></div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Bootstrap's JavaScript -->
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+
+
+
+  <!-- Owl carousel -->
+
+  <script src="js/owl.carousel.js"></script>
+
+
+
+  <!-- Custom js -->
+
+  <script src="js/script.js"></script>
 
 </body>
 
