@@ -1,0 +1,61 @@
+.contenedor-foda{
+	
+}
+.fondo-gris{
+	position: relative;
+	left: 100px;
+
+}
+.imagen-centro{
+	position: absolute;
+	top: 130px;
+	left: 260px;
+	z-index: 100;
+	
+}
+.imagen-rosa{
+	position: absolute;
+	top: 0px;
+	left: 212px;
+	cursor: pointer;
+}
+.texto-rosa{
+	position: absolute;
+	top: 40px;
+	right: 550px;
+}
+.imagen-naranja{
+	position: absolute;
+	left: -26px;
+	cursor: pointer;
+}
+.texto-naranja{
+	position: absolute;
+	top: 125px;
+	left: -70px;
+}
+.imagen-morada{
+	position: absolute;
+	left: 272px;
+	top: 87px;
+	cursor: pointer;
+}
+.texto-morada{
+	position: absolute;
+	top: 270px;
+	right: 520px;
+}
+.imagen-azul{
+	position: absolute;
+	left: 65px;
+	top:165px;
+	cursor: pointer;
+}
+.texto-azul{
+	position: absolute;
+	top: 350px;
+	left: 60px;
+}
+#w3review{
+	border: solid #a5a5a5 1px;
+}
