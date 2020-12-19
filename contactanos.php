@@ -1,67 +1,30 @@
+<?php
+include("backend/config.php");
+session_start();
+?>
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Contáctanos</title>
 
   <!-- Fav Icon -->
-
   <link rel="shortcut icon" href="favicon.ico">
-
-
-
   <!-- Owl carousel -->
-
   <link href="css/owl.carousel.css" rel="stylesheet">
-
-
-
   <!-- Bootstrap -->
-
   <link href="css/bootstrap.min.css" rel="stylesheet">
-
-
-
   <!-- Font Awesome -->
-
   <link href="css/font-awesome.css" rel="stylesheet">
-
-
-
   <!-- Custom Style -->
-
   <link href="css/main.css" rel="stylesheet">
-
-
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-
-  <!--[if lt IE 9]>
-
-  <script src="js/html5shiv.min.js"></script>
-
-  <script src="js/respond.min.js"></script>
-
-<![endif]-->
-
-
 
 </head>
 
 <body>
-
-  <!-- Header start -->
-
-
-
   <?php 
   
   include("estructura/menu.php");
@@ -143,69 +106,9 @@
         <div class="row">
 
           <div class="col-md-12 column">
-
-            <!--<div class="title"> <span>We Are Here For Your Help</span>
-
-            <h2>GET IN TOUCH FAST</h2>
-
-            <p>Vestibulum at magna tellus. Vivamus sagittis nunc aliquet. Vivamin orci aliquam<br>
-
-              eros vel saphicula. Donec eget ultricies ipsmconsequat.</p>-->
-
           </div>
 
         </div>
-
-
-
-        <!-- Contact Info -->
-        <!-- 
-
-        <div class="col-md-4 column">
-
-          <div class="contact-now">
-
-            <div class="contact"> <span><i class="fa fa-home"></i></span>
-
-              <div class="information"> <strong>Dirección:</strong>
-
-                <p>8500 lorem, New Ispum, Dolor amet sit 12301</p>
-
-              </div>
-
-            </div> -->
-
-        <!-- Contact Info -->
-        <!-- 
-
-            <div class="contact"> <span><i class="fa fa-envelope"></i></span>
-
-              <div class="information"> <strong>Correo:</strong>
-
-                <p>investigate@your-site.com</p>
-
-                <p>investigate@your-site.com</p>
-
-              </div>
-
-            </div> -->
-
-        <!-- Contact Info -->
-        <!-- 
-
-            <div class="contact"> <span><i class="fa fa-phone"></i></span>
-
-              <div class="information"> <strong>Teléfono:</strong>
-
-                <p>+12 345 67 09</p>
-
-                <p>+12 345 67 09</p>
-
-              </div>
-
-            </div>  -->
-
-        <!-- Contact Info -->
 
       </div>
 

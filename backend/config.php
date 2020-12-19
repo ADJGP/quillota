@@ -3,6 +3,7 @@
 // Enter your Host, username, password, database below.
 // I left password empty because i do not set password on localhost.
 $con = mysqli_connect("localhost","root","","quillota");
+define('NUM_ITEMS_BY_PAGE', 42);
 #$con = mysqli_connect("localhost","tarjhgww_root","metasoft123.","tarjhgww_quillota");
 // Check connection
 if (mysqli_connect_errno())
