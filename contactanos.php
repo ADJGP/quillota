@@ -62,18 +62,36 @@
 
 
 
-  <?php include("estructura/menu.php");
+  <?php 
+  
+  include("estructura/menu.php");
+  require_once('PHPMailer/config.php');
+  $alertEvent='';
   
   if(isset($_POST['name'])){
 
-    $para      = 'gonzalezalexis034@gmail.com';
-    $titulo    = 'Solicitud de Contacto de '.$_POST['name'];
-    $mensaje   = "Persona que solicita: ".$_POST['name']."\r\n Municipalidad: ".$_POST['municipalidad']."\r\n Detalles de la solicitud:".$_POST['comments'];
-    $cabeceras = 'From: gonzalezalexis034@gmail.com' . "\r\n" .
-    'Reply-To: gonzalezalexis034@gmail.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+    $mail->ClearAllRecipients( );
 
-    mail($para, $titulo, $mensaje, $cabeceras);
+    $mail->AddAddress("gonzalezalexis034@gmail.com");
+    
+    $mail->IsHTML(true);  //podemos activar o desactivar HTML en mensaje
+    $mail->Subject = 'Solicitud de contacto:'.$_POST['name'];
+    
+    $msg = "<h2>Contenido mensaje HTML:</h2>
+    <p>Contenido</p>
+    <p>Más Contenido...</p>
+    ";
+    
+    $mail->Body    = $msg;
+    
+    if(!$mail->Send()){
+
+      $alertEvent="Disculpe, se ha presentado un inconveniente al tratar de enviar su correo. Vuelva a intentarlo.";
+
+    }else{
+
+      $alertEvent="Su correo fue enviado exitosamente!.";
+    }
 
   }
   ?>
@@ -115,6 +133,11 @@
 
     <div class="container">
 
+      <?php  if(!empty($alertEvent)) { ?>
+      <div class="alert alert-info" role="alert">
+        <?php  echo $alertEvent ?>
+      </div>
+      <?php } ?>
       <div class="contact-wrap">
 
         <div class="row">
