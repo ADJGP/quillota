@@ -1,7 +1,3 @@
-
-
-
-
 <div class="header">
 
   <div class="container">
@@ -20,7 +16,7 @@
 
       </div>
 
-      <div class="col-md-10 col-sm-12 col-xs-12"> 
+      <div class="col-md-10 col-sm-12 col-xs-12">
 
         <!-- Nav start -->
 
@@ -30,7 +26,7 @@
 
             <ul class="nav navbar-nav">
 
-              <li class="dropdown active"><a href="teorientamos.php">TE ORIENTAMOS <span class="caret"></span></a> 
+              <li class="dropdown active"><a href="teorientamos.php">TE ORIENTAMOS <span class="caret"></span></a>
 
                 <!-- 
 
@@ -42,73 +38,73 @@
 
                 </ul> dropdown start -->
 
-                <!-- dropdown end --> 
+                <!-- dropdown end -->
 
               </li>
 
               <li><a href="listadoempresas.php">EMPRESAS</a></li>
 
-                     <li><a href="contactanos.php">CONTÁCTANOS</a></li>
+              <li><a href="contactanos.php">CONTÁCTANOS</a></li>
 
-            
 
-                 
 
-                <!-- dropdown end --> 
+
+
+              <!-- dropdown end -->
 
               </li>
 
-             
 
-            
+
+
 
               <li class="postjob"><a href="subircv.php">ENVIAR CURRICULUM</a></li>
 
               <li class="jobseeker"><a href="agendarentrevista.php">ENTREVISTAS</a></li>
 
-              
-
-
-
-              
 
 
 
 
 
-              <?php  
-
-         if(!isset($_SESSION["username"])){
-
-//mostrar bienvenida
 
 
 
-           ?>  
 
-            <li class=""><a href="register.php">REGISTRAR</a></li>
+
+              <?php
+
+              if (!isset($_SESSION["username"])) {
+
+                //mostrar bienvenida
+
+
+
+              ?>
+
+                <li class=""><a href="register.php">REGISTRAR</a></li>
 
                 <li class=""><a href="login.php">ENTRAR</a></li>
 
-            <?php
+              <?php
 
-}else{
+              } else {
 
-   ?> 
-
-
+              ?>
 
 
 
 
 
-            <li class="dropdown userbtn">
+
+
+                <li class="dropdown userbtn">
 
 
 
-             <li class="dropdown userbtn"><a href=""><img src="images/candidates/01.jpg" alt="" class="userimg" /></a>
+                <li class="dropdown userbtn"><a href=""><img src="images/candidates/01.jpg" alt="" class="userimg" /></a>
 
-                 <ul class="dropdown-menu">
+                  <ul class="dropdown-menu">
 
                     <li><a href="dashboard-user.php"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
 
@@ -122,11 +118,11 @@
 
                   </ul>
 
-              </li>
+                </li>
 
                 <li class=""><a href="salir.php">Salir</a></li>
 
-             <?php  } ?>
+              <?php  } ?>
 
 
 
@@ -134,17 +130,17 @@
 
 
 
-                
 
 
 
 
 
-             
+
+
 
             </ul>
 
-            <!-- Nav collapes end --> 
+            <!-- Nav collapes end -->
 
           </div>
 
@@ -152,16 +148,16 @@
 
         </div>
 
-        <!-- Nav end --> 
+        <!-- Nav end -->
 
       </div>
 
     </div>
 
-    <!-- row end --> 
+    <!-- row end -->
 
   </div>
 
-  <!-- Header container end --> 
+  <!-- Header container end -->
 
 </div>
