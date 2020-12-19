@@ -1,11 +1,8 @@
-<?php
-	require_once('backend/setup.php');
 
-?>
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="euc-jp">
-
+<head>
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Login</title>
@@ -35,7 +32,7 @@
 
   <?php
 require('backend/config.php');
-#session_start();
+session_start();
 // If form submitted, insert values into the database.
 if (isset($_POST['username'])){
         // removes backslashes
@@ -78,6 +75,11 @@ $userid=$fila['id'];
              header("Location: index.php");
            }
     
+
+     if ($tipo==3) {
+
+             header("Location: Dashboard-muni/index.php");
+           }
          } 
 
  if ($rows==0){
@@ -126,8 +128,8 @@ include("estructura/menu.php");
         <div class="userccount">
           <div class="socialLogin">
             <h5>Formulario de acceso</h5>
-            <a href="#." class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a href="<?php echo $google->createAuthUrl(); ?>" class="gp"><i class="fa fa-google-plus" aria-hidden="true"></i></a> <a href="#." class="tw"><i class="fa fa-twitter" aria-hidden="true"></i></a> </div>
-          
+            <a href="#." class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#." class="gp"><i class="fa fa-google-plus" aria-hidden="true"></i></a> <a  class="tw"><i class="fa fa-twitter" aria-hidden="true"></i></a> </div>
+     
 
           <!-- login form -->
           <form form action="" method="post" name="login">
