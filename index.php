@@ -1,19 +1,17 @@
 <?php
 include("backend/config.php");
 session_start();
+$num_total_rows = '';
+$searchResults = 0;
+
 
 if(isset($_POST['palabraClave'])){
 
-$searchResults = '';
-$result = $con->query("SELECT * FROM ofertas WHERE titulo LIKE '".$_POST['palabraClave']."%'");
+$result = $con->query("SELECT * FROM ofertas WHERE titulo LIKE '".$_POST['palabraClave']."%' OR id_muni ='".$_POST['municipalidad']."' OR rubro ='".$_POST['tipo']."'");
 $row = $result->fetch_assoc();
 $num_total_rows = $result->num_rows;
 
-if($num_total_rows>0){
-  $searchResults=1;
-}else{
-  $searchResults=0;
-}
+$searchResults = ($result->num_rows>0) ? 1 : 2 ;
 
 }
 ?>
@@ -30,7 +28,7 @@ if($num_total_rows>0){
   <!-- Fav Icon -->
   <link rel="shortcut icon" href="favicon.ico">
 
-  <!-- Owl carousel -->
+  <!-- Owl carousel --> 
   <link href="css/owl.carousel.css" rel="stylesheet">
 
   <!-- Bootstrap -->
@@ -54,20 +52,19 @@ if($num_total_rows>0){
   <div class="searchwrap">
     <div class="container">
       <div class="searchbar row">
+        <form method="post" action="index.php">
         <div class="col-md-5">
-
-          <form method="post" action="index.php">
             <input required name="palabraClave" type="text" class="form-control mb-2" id="inlineFormInput" />
         </div>
         <div class="col-md-3">
-          <select name="tipo" class="form-control">
+          <select required name="tipo" class="form-control" >
             <option>Cualquier categoría</option>
             <option>Marketing</option>
             <option>Educación </option>
           </select>
         </div>
         <div class="col-md-2">
-          <select name="municipalidad" class="form-control">
+          <select required name="municipalidad" class="form-control" >
             <option>Municipalidad</option>
             <option value="1">Quillota</option>
             <option value="2">La calera</option>
@@ -78,8 +75,8 @@ if($num_total_rows>0){
         </div>
         <div class="col-md-2">
           <input type="submit" class="btn" value="Buscar">
-          </form>
         </div>
+       </form>
       </div>
     </div>
   </div>
@@ -103,40 +100,51 @@ if($num_total_rows>0){
         //calculo el total de paginas
         $total_pages = ceil($num_total_rows / NUM_ITEMS_BY_PAGE);
 
-        $result = $con->query("SELECT * FROM ofertas WHERE titulo LIKE '".$_POST['palabraClave']."%' ORDER BY id ASC LIMIT " . $start . ", " .NUM_ITEMS_BY_PAGE);
+        $result = $con->query("SELECT * FROM ofertas WHERE titulo LIKE '".$_POST['palabraClave']."%' OR id_muni ='".$_POST['municipalidad']."' OR rubro ='".$_POST['tipo']."' ORDER BY id ASC LIMIT " . $start . ", " .NUM_ITEMS_BY_PAGE);
         
         ?>
 
-<?php if(!empty($searchResults)) { ?>
+
+<?php if($searchResults==1) { ?>
 <!-- Resultados de la busqueda -->
-   <div class="section greybg">
-      <div class="container">
+<div class="section greybg">
+  <div class="container">
+                      <!-- title start -->
+                      <div class="titleTop">
+                        <div class="subtitle"><span>Resultados de tu busqueda</span> </div>
+                      </div>
+                      <!-- title end -->
+      
 
-      <?php if ($result->num_rows > 0) {
-      echo '<div class="jobslist row">';
-       while ($row = $result->fetch_assoc()) {
-       echo '<li class="col-md-4 col-sm-6">';
-       echo '<div class="jobint">';
-       echo '<div class="row">';
-       #echo '<div class="col-md-2 col-sm-2"><img src="images/employers/emplogo1.jpg" alt="Job Name" /></div>';
-       echo '<div class="col-md-12 col-sm-12">';
-       echo '<a href="#.">' . $row['titulo'] . '</a>';
-       echo '<div class="company"><a href="#.">Datebase Management Company</a></div>';
-       echo '<div class="jobloc"><label class="fulltime">Full Time</label> - <span>New York</span></div>';
-       echo '</div>';
-       echo '</div>';
-       echo '</div>';
-       echo '</li>';
-       }
-       echo '</div>';
-       } ?>
+                      <?php if ($result->num_rows > 0) {
+                      echo '<div class="jobslist row">';
+                      while ($row = $result->fetch_assoc()) {
+                      echo '<li class="col-md-4 col-sm-6">';
+                      echo '<div class="jobint">';
+                      echo '<div class="row">';
+                      #echo '<div class="col-md-2 col-sm-2"><img src="images/employers/emplogo1.jpg" alt="Job Name" /></div>';
+                      echo '<div class="col-md-12 col-sm-12">';
+                      echo '<a href="#.">' . $row['titulo'] . '</a>';
+                      echo '<div class="company"><a href="#.">'.$row['rubro'].'</a></div>';
+                      echo '<div class="jobloc"><label class="fulltime">'.$row['lugar'].'</label></div>';
+                      echo '</div>';
+                      echo '</div>';
+                      echo '</div>';
+                      echo '</li>';
+                      }
+                      echo '</div>';
+                      }
+                      ?>
+                      
+                      
 
+                     
        <!--Paginacion-->
        <div class="viewallbtn">
           <?php echo '<nav>';
             echo '<ul class="pagination">';
 
-            if ($total_pages > 1) {
+          if ($total_pages > 1) {
             if ($page != 1) {
             echo '<li class="page-item"><a class="page-link" href="index.php?page=' . ($page - 1) . '"><span aria-hidden="true">&laquo;</span></a></li>';
             }
@@ -156,17 +164,25 @@ if($num_total_rows>0){
             echo '</ul>';
             echo '</nav>';
             }
+            
             ?>
-         </div>
+        </div>
 
     <!--view button end-->
-
-    </div>
-
+  </div>
 </div>
 <!-- Resultados de la busqueda -->
-<?php } ?>
+<?php }else if($searchResults==2){?>
 
+  <!-- Resultados de la busqueda -->
+<div class="section greybg">
+  <div class="container text-center">
+  <h2>No hay registros con esas coincidencias! </h2>
+  </div>
+</div>
+<!-- Resultados de la busqueda -->
+
+<?php } ?>
 
   <!-- How it Works start -->
   <div class="section howitwrap">
