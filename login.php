@@ -4,16 +4,14 @@ require_once('backend/setup.php');
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="euc-jp">
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login</title>
+  
   <!-- Fav Icon -->
   <link rel="shortcut icon" href="favicon.ico">
-
   <!-- Owl carousel -->
   <link href="css/owl.carousel.css" rel="stylesheet">
 
@@ -37,6 +35,7 @@ require_once('backend/setup.php');
 <body>
 
   <?php
+
   require('backend/config.php');
   
   // If form submitted, insert values into the database.
@@ -51,11 +50,8 @@ require_once('backend/setup.php');
     $query = "SELECT * FROM `users` WHERE username='$username'
 and password='" . md5($password) . "'";
 
-
     $result = mysqli_query($con, $query);
     $fila = mysqli_fetch_assoc($result);
-
-
 
     $rows = mysqli_num_rows($result);
     
@@ -79,10 +75,14 @@ and password='" . md5($password) . "'";
 
       if ($tipo == 2) {
 
-        header("Location: index.php");
-      }
-    }
+             header("Location: index.php");
+           }
+    
+     if ($tipo==3) {
 
+             header("Location: Dashboard-muni/index.php");
+           }
+         } 
     if ($rows == 0) {
 
       header("Location: 404.php");
@@ -148,6 +148,7 @@ and password='" . md5($password) . "'";
                 <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> <a href="#.">Registrese aqui</a></div>
                 <!-- sign up form end-->
               </form>
+
             </div>
           </div>
         </div>
