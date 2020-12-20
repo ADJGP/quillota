@@ -1,8 +1,22 @@
 <?php
 include("backend/config.php");
 session_start();
-?>
 
+if(isset($_POST['palabraClave'])){
+
+$searchResults = '';
+$result = $con->query("SELECT * FROM ofertas WHERE titulo LIKE '".$_POST['palabraClave']."%'");
+$row = $result->fetch_assoc();
+$num_total_rows = $result->num_rows;
+
+if($num_total_rows>0){
+  $searchResults=1;
+}else{
+  $searchResults=0;
+}
+
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -42,8 +56,8 @@ session_start();
       <div class="searchbar row">
         <div class="col-md-5">
 
-          <form method="post" action="listadoofertabuscada.php">
-            <input required name="PalabraClave" type="text" class="form-control mb-2" id="inlineFormInput" />
+          <form method="post" action="index.php">
+            <input required name="palabraClave" type="text" class="form-control mb-2" id="inlineFormInput" />
         </div>
         <div class="col-md-3">
           <select name="tipo" class="form-control">
@@ -71,6 +85,87 @@ session_start();
   </div>
   <!-- Search End -->
 
+  <?php
+    if ($num_total_rows > 0) {
+        $page = false;
+
+        //examino la pagina a mostrar y el inicio del registro a mostrar
+        if (isset($_GET["page"])) {
+            $page = $_GET["page"];
+        }
+
+        if (!$page) {
+            $start = 0;
+            $page = 1;
+        } else {
+            $start = ($page - 1) * NUM_ITEMS_BY_PAGE;
+        }
+        //calculo el total de paginas
+        $total_pages = ceil($num_total_rows / NUM_ITEMS_BY_PAGE);
+
+        $result = $con->query("SELECT * FROM ofertas WHERE titulo LIKE '".$_POST['palabraClave']."%' ORDER BY id ASC LIMIT " . $start . ", " .NUM_ITEMS_BY_PAGE);
+        
+        ?>
+
+<?php if(!empty($searchResults)) { ?>
+<!-- Resultados de la busqueda -->
+   <div class="section greybg">
+      <div class="container">
+
+      <?php if ($result->num_rows > 0) {
+      echo '<div class="jobslist row">';
+       while ($row = $result->fetch_assoc()) {
+       echo '<li class="col-md-4 col-sm-6">';
+       echo '<div class="jobint">';
+       echo '<div class="row">';
+       #echo '<div class="col-md-2 col-sm-2"><img src="images/employers/emplogo1.jpg" alt="Job Name" /></div>';
+       echo '<div class="col-md-12 col-sm-12">';
+       echo '<a href="#.">' . $row['titulo'] . '</a>';
+       echo '<div class="company"><a href="#.">Datebase Management Company</a></div>';
+       echo '<div class="jobloc"><label class="fulltime">Full Time</label> - <span>New York</span></div>';
+       echo '</div>';
+       echo '</div>';
+       echo '</div>';
+       echo '</li>';
+       }
+       echo '</div>';
+       } ?>
+
+       <!--Paginacion-->
+       <div class="viewallbtn">
+          <?php echo '<nav>';
+            echo '<ul class="pagination">';
+
+            if ($total_pages > 1) {
+            if ($page != 1) {
+            echo '<li class="page-item"><a class="page-link" href="index.php?page=' . ($page - 1) . '"><span aria-hidden="true">&laquo;</span></a></li>';
+            }
+
+            for ($i = 1; $i <= $total_pages; $i++) {
+            if ($page == $i) {
+                echo '<li class="page-item active"><a class="page-link" href="#">' . $page . '</a></li>';
+            } else {
+                echo '<li class="page-item"><a class="page-link" href="listado_empresas.php?page=' . $i . '">' . $i . '</a></li>';
+            }
+            }
+
+            if ($page != $total_pages) {
+            echo '<li class="page-item"><a class="page-link" href="listado_empresas.php?page=' . ($page + 1) . '"><span aria-hidden="true">&raquo;</span></a></li>';
+            }
+            }
+            echo '</ul>';
+            echo '</nav>';
+            }
+            ?>
+         </div>
+
+    <!--view button end-->
+
+    </div>
+
+</div>
+<!-- Resultados de la busqueda -->
+<?php } ?>
 
 
   <!-- How it Works start -->
