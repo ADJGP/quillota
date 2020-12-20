@@ -52,35 +52,15 @@
               } else {
 
               ?>
-
-
-
-
-
-
-
-                <li class="dropdown userbtn">
-
-
-
-                <li class="dropdown userbtn"><a href=""><img src="images/candidates/01.jpg" alt="" class="userimg" /></a>
-
+                <li class="dropdown userbtn"><a href="" title=""><img src="images/user.jpg" alt="foto de perfil" width="10%" class="userimg" /></a>
                   <ul class="dropdown-menu">
-
-                    <li><a href="dashboard-user.php"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
-
-                    <li><a href="edit-profile.php"><i class="fa fa-pencil" aria-hidden="true"></i> Editar perfil</a></li>
-
-                    <li><a href="detalles-del-candidato.php"><i class="fa fa-pencil" aria-hidden="true"></i>Mis detalles</a></li>
-
+                    <li><a href="dashboard-user.php"><i class="fa fa-tachometer" aria-hidden="true"></i> <?php $_SESSION['username']; ?></a></li>
+                    <li><a href="edit-profile.php"><i class="fa fa-pencil" aria-hidden="true"></i> Perfil de Usuario</a></li>
                     <li role="separator" class="divider"></li>
-
                     <li><a href="salir.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Salir</a></li>
 
                   </ul>
-
                 </li>
-
               <?php  } ?>
 
 
