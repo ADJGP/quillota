@@ -57,11 +57,13 @@ and password='".md5($password)."'";
 $userid=$fila['id'];
  $rut=$fila['rut'];
   $tipo=$fila['tipo'];
+  $comuna=$fila['id_comuna'];
 
 
      $_SESSION['username'] = $username;
      $_SESSION['id'] = $userid;
        $_SESSION['rut'] = $rut;
+         $_SESSION['id_comuna'] = $comuna;
        
 
         if ($tipo==1) {

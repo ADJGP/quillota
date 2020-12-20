@@ -1,5 +1,15 @@
+<?php 
 
-<?php include("../backend/config.php"); 
+
+
+include("../backend/auth.php");
+include("../backend/config.php");
+session_start(); 
+
+
+$id=$_SESSION['id'];
+$username=$_SESSION['username'];
+$comuna=$_SESSION['id_comuna'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -92,7 +102,7 @@
                                     <tbody>
                                       <?php
                
-                    $sql = mysqli_query($con, "SELECT * FROM formfoda ");
+                    $sql = mysqli_query($con, "SELECT * FROM formfoda where id_comuna='$comuna' ");
              
                 if(mysqli_num_rows($sql) == 0){
                     echo '<tr><td colspan="8">No hay datos.</td></tr>';
