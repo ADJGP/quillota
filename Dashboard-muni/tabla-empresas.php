@@ -1,5 +1,18 @@
 
-<?php include("../backend/config.php"); 
+<?php 
+
+
+include("../backend/auth.php");
+include("../backend/config.php");
+session_start(); 
+
+
+$id=$_SESSION['id'];
+$username=$_SESSION['username'];
+$comuna=$_SESSION['id_comuna'];
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,7 +106,10 @@
                     $sql = mysqli_query($con, "SELECT * FROM empresas
 INNER JOIN dic_rubros
 INNER JOIN dic_comunas
-WHERE empresas.rubro = dic_rubros.id_rubro
+WHERE 
+empresas.comuna='$comuna'
+AND
+empresas.rubro = dic_rubros.id_rubro
 and empresas.comuna = dic_comunas.id_comuna");
              
                 if(mysqli_num_rows($sql) == 0){

@@ -3,6 +3,15 @@ include "class.phpmailer.php";
 include "class.smtp.php";
 include "../backend/config.php";
 
+session_start(); 
+
+
+$id=$_SESSION['id'];
+$username=$_SESSION['username'];
+$comuna=$_SESSION['id_comuna'];
+
+
+
 if(isset($_POST["correo"])){
 
 $correousaurio=$_POST["correousaurio"];
@@ -134,7 +143,12 @@ $phpmailer->Send();
                                     <tbody>
                                       <?php
                
-                    $sql = mysqli_query($con, "SELECT * FROM entrevista ");
+                    $sql = mysqli_query($con, "SELECT * FROM entrevista
+
+INNER JOIN dic_comunas
+WHERE 
+entrevista.municipalidad='$comuna'
+and entrevista.municipalidad = dic_comunas.id_comuna ");
              
                 if(mysqli_num_rows($sql) == 0){
                     echo '<tr><td colspan="8">No hay datos.</td></tr>';

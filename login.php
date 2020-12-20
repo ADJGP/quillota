@@ -35,7 +35,6 @@ require_once('backend/setup.php');
 <body>
 
   <?php
-
   require('backend/config.php');
   
   // If form submitted, insert values into the database.
@@ -50,15 +49,19 @@ require_once('backend/setup.php');
     $query = "SELECT * FROM `users` WHERE username='$username'
 and password='" . md5($password) . "'";
 
-    $result = mysqli_query($con, $query);
+    $result = mysqli_query($con,$query);
     $fila = mysqli_fetch_assoc($result);
 
-    $rows = mysqli_num_rows($result);
-    
-    if ($rows == 1) {
-      $userid = $fila['id'];
-      $rut = $fila['rut'];
-      $tipo = $fila['tipo'];
+     
+
+   $rows = mysqli_num_rows($result);
+        if($rows==1){
+
+   $userid=$fila['id'];
+   $rut=$fila['rut'];
+   $tipo=$fila['tipo'];
+   $comuna=$fila['id_comuna'];
+
 
       #Variables de Sesion
       session_start();
@@ -66,7 +69,7 @@ and password='" . md5($password) . "'";
       $_SESSION['id'] = $userid;
       $_SESSION['rut'] = $rut;
       $_SESSION['sesion'] = 'Active';
-
+      $_SESSION['id_comuna'] = $comuna;
 
       if ($tipo == 1) {
 

@@ -8,6 +8,7 @@ session_start();
 
 $id=$_SESSION['id'];
 $username=$_SESSION['username'];
+$comuna=$_SESSION['id_comuna'];
 
 
 
@@ -58,7 +59,11 @@ $username=$_SESSION['username'];
                     <!-- Content Row -->
                     <div class="row">
 
+
+
                        <?php 
+
+                      
 
                        include("../backend/config.php");
 
