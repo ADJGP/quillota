@@ -17,3 +17,7 @@
 [17-Dec-2020 14:36:45 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-admin/index.php on line 6
 [17-Dec-2020 14:36:48 America/New_York] PHP Notice:  Undefined variable: username in /home/tarjhgww/Testingmetasoft.cl/Quillota/estructura/menuadmin.php on line 341
 [17-Dec-2020 14:37:28 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-admin/index.php on line 6
+[19-Dec-2020 23:18:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-admin/index.php on line 6
+[19-Dec-2020 23:18:40 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7
+[19-Dec-2020 23:42:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-admin/index.php on line 6
+[19-Dec-2020 23:42:20 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7

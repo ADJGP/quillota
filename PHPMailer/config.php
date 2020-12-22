@@ -7,7 +7,7 @@
 *
 */
 
-require_once('phpmailer/PHPMailerAutoload.php');
+require_once('PHPMailerAutoload.php');
 
 
 $mail = new PHPMailer;

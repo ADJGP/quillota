@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(E_ALL);
+
 include("backend/config.php");
 session_start();
 $num_total_rows = '';
@@ -58,19 +63,19 @@ $searchResults = ($result->num_rows>0) ? 1 : 2 ;
         </div>
         <div class="col-md-3">
           <select required name="tipo" class="form-control" >
-            <option>Cualquier categoría</option>
-            <option>Marketing</option>
-            <option>Educación </option>
+            <option disabled selected value="null">Cualquier categoría</option>
+            <option value="1">Agricultura</option>
+            <option value="8">Educación </option>
           </select>
         </div>
         <div class="col-md-2">
           <select required name="municipalidad" class="form-control" >
-            <option>Municipalidad</option>
-            <option value="1">Quillota</option>
-            <option value="2">La calera</option>
-            <option value="3">Hijuelas</option>
-            <option value="4">Nogales</option>
-            <option value="5">La Cruz</option>
+            <option disabled selected value="null">Municipalidad</option>
+            <option value="60">Quillota</option>
+            <option value="55">La calera</option>
+            <option value="54">Hijuelas</option>
+            <option value="58">Nogales</option>
+            <option value="56">La Cruz</option>
           </select>
         </div>
         <div class="col-md-2">

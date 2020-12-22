@@ -17,3 +17,35 @@
 [17-Dec-2020 14:36:45 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-admin/index.php on line 6
 [17-Dec-2020 14:36:48 America/New_York] PHP Notice:  Undefined variable: username in /home/tarjhgww/Testingmetasoft.cl/Quillota/estructura/menuadmin.php on line 341
 [17-Dec-2020 14:37:28 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-admin/index.php on line 6
+[19-Dec-2020 23:42:26 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/index.php on line 6
+[19-Dec-2020 23:42:26 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7
+[19-Dec-2020 23:42:33 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/tabla-ofertas.php on line 102
+[19-Dec-2020 23:42:38 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/tabla-empresas.php on line 99
+[19-Dec-2020 23:42:42 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7
+[19-Dec-2020 23:44:06 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/tabla-empresas.php on line 99
+[19-Dec-2020 23:47:48 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/tabla-empresas.php on line 99
+[19-Dec-2020 23:48:05 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/tabla-empresas.php on line 99
+[19-Dec-2020 23:49:20 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/tabla-empresas.php on line 99
+[20-Dec-2020 12:03:11 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/index.php on line 6
+[20-Dec-2020 12:03:11 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7
+[20-Dec-2020 14:48:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/index.php on line 6
+[20-Dec-2020 14:48:34 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7
+[20-Dec-2020 14:48:42 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/registroempresas.php on line 5
+[20-Dec-2020 14:48:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/registroofertas.php on line 5
+[20-Dec-2020 14:49:27 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/tabla-fodas-pendientes.php on line 7
+[20-Dec-2020 14:49:27 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/tabla-fodas-pendientes.php on line 107
+[20-Dec-2020 14:49:34 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7
+[20-Dec-2020 14:49:44 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/registroofertas.php on line 5
+[20-Dec-2020 14:50:22 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/registroempresas.php on line 5
+[20-Dec-2020 14:53:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/index.php on line 6
+[20-Dec-2020 14:53:18 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7
+[20-Dec-2020 15:12:54 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/index.php on line 6
+[20-Dec-2020 15:12:54 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7
+[20-Dec-2020 15:21:14 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/index.php on line 6
+[20-Dec-2020 15:21:14 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7
+[21-Dec-2020 09:58:27 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/index.php on line 6
+[21-Dec-2020 09:58:27 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7
+[21-Dec-2020 09:58:33 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/index.php on line 6
+[21-Dec-2020 09:58:33 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7
+[21-Dec-2020 12:51:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/tarjhgww/Testingmetasoft.cl/Quillota/Dashboard-muni/index.php on line 6
+[21-Dec-2020 12:51:18 America/New_York] PHP Notice:  Constant NUM_ITEMS_BY_PAGE already defined in /home/tarjhgww/Testingmetasoft.cl/Quillota/backend/config.php on line 7
