@@ -1,3 +1,8 @@
+<?php 
+include("backend/config.php");
+session_start();
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +57,7 @@
     <div class="row">
       <div class="col-md-3 col-sm-4">
       	
-        <div class="switchbox">
+        <!--<div class="switchbox">
         	<div class="txtlbl">Disponibilidad inmediata <i class="fa fa-info-circle" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus consectetur sagittis. Duis vitae urna vehicula, ornare nibh non, aliquet neque. In vitae erat ut augue suscipit." data-original-title="" title=""></i></div>
             <div class="pull-right"><label class="switch switch-green">
               <input type="checkbox" class="switch-input">
@@ -60,19 +65,16 @@
               <span class="switch-handle"></span>
             </label></div>
             <div class="clearfix"></div>
-        </div>
+        </div>-->
       
         <ul class="usernavdash">
           <li class="active"><a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i> Escritorio</a></li>
-          <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Mis detalles</a></li>
-          <li><a href="#"><i class="fa fa-desktop" aria-hidden="true"></i> Mis trabajos postulados</a></li>
-          <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> Ver CV</a></li>
-          <li><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Construir CV</a></li>
-          <li><a href="#"><i class="fa fa-trash" aria-hidden="true"></i> Borrar CV</a></li>
-          <li><a href="#"><i class="fa fa-commenting" aria-hidden="true"></i> Retroalimentación</a></li>
-          <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i> Seguidores</a></li>
-          
-          <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i> Ajustes de la cuenta</a></li>
+          <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Datos Personales</a></li>
+          <li><a href="#"><i class="fa fa-desktop" aria-hidden="true"></i> Mis Estudios</a></li>
+          <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> Mis Experiencia Laboral</a></li>
+          <li><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Cursos y Habilidades</a></li>
+          <li><a href="#"><i class="fa fa-trash" aria-hidden="true"></i> Ver CV</a></li>
+          <li><a href="#"><i class="fa fa-commenting" aria-hidden="true"></i> Postulacion </a></li>
           <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a></li>
         </ul>
       </div>

@@ -22,7 +22,7 @@ if (isset($_POST['add'])) {
 
   $apellidos  = mysqli_real_escape_string($con, (strip_tags($_POST["apellido"], ENT_QUOTES))); //Escanpando caracteres 
 
-  $usuarios   = mysqli_real_escape_string($con, (strip_tags($_POST["usuario"], ENT_QUOTES))); //Escanpando caracteres 
+  #$usuarios   = mysqli_real_escape_string($con, (strip_tags($_POST["usuario"], ENT_QUOTES))); //Escanpando caracteres 
 
   $correo     = mysqli_real_escape_string($con, (strip_tags($_POST["correo"], ENT_QUOTES))); //Escanpando caracteres 
 
@@ -34,39 +34,73 @@ if (isset($_POST['add'])) {
 
   $date_create = date("d/m/y");
 
+  
+  //Validar que username sea unico
+  $userNameExist = mysqli_query($con, "SELECT * FROM users WHERE username='$nombre_usuario'");
+
+  if (mysqli_num_rows($userNameExist) == 0) {
+  
+  //Validar que rut sea unico
+  $userRutExist = mysqli_query($con, "SELECT * FROM users WHERE rut='$rut'");
+
+  if (mysqli_num_rows($userRutExist) == 0){
+
+  //Validar que email sea unico
+  $userEmailExist = mysqli_query($con, "SELECT * FROM users WHERE email='$correo'");
+  
+  if (mysqli_num_rows($userEmailExist)==0){
+   
+   //Crear usuario
+   $insert = mysqli_query($con, "INSERT INTO users(username, email, password,rut, trn_date, tipo) VALUES('$nombre_usuario','$correo','" . md5($password) . "','$rut','$date_create','2')") or die(mysqli_error($con));
+  
+                            if($insert){
+    
+                              //Insertar datos de usuario
+                              $insert2 = mysqli_query($con, "INSERT INTO informacion_personal(id_usuario, nombres, apellidos, rut, municipalidad, fecha_nacimiento, correo, telefono, area) VALUES('$con->insert_id','$nombres','$apellidos','$rut','$municipalidad','$fecha_nacimiento','$correo','$telefono','$area')") or die(mysqli_error($con));
+   
+                                                if($insert2){
+                                                  
+                                                  $alertEvent="Se ha registrado exitosamente.";
+                                                  $event="success";
+
+                                                }else{
+                                                  
+                                                  $alertEvent="Ha ocurrido un error y no se ha podido completar el registro.";
+                                                  $event="danger";
+
+                                                }
+
+                            }else{
+
+                                $alertEvent="Ha ocurrido un error y no se ha podido completar el registro. verifica los datos ingresados y vuelva a intentarlo";
+                                $event="danger";
+
+                            }
 
 
+  }else{
 
+    $alertEvent = "Ya ese correo electronico esta en uso, prueba con otro.";
+    $event="info";
 
-  $cek = mysqli_query($con, "SELECT * FROM users WHERE username='$nombre_usuario'");
-
-  if (mysqli_num_rows($cek) == 0) {
-
-
-
-    $insert = mysqli_query($con, "INSERT INTO users(username, email, password,rut, trn_date, tipo)
-
-                  VALUES('$nombre_usuario','$correo','" . md5($password) . "','$rut','$date_create','2')") or die(mysqli_error($con));
-
-
-
-    $insert2 = mysqli_query($con, "INSERT INTO informacion_personal(nombres, apellidos, rut, municipalidad, fecha_nacimiento, correo, telefono, area)
-
-                  VALUES('$nombres','$apellidos','$rut','$municipalidad','$fecha_nacimiento','$correo','$telefono','$area')") or die(mysqli_error($con));
-
-
-
-    if ($insert) {
-
-      echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Bien hecho! Los datos han sido guardados con éxito.</div>';
-    } else {
-
-      echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. No se pudo guardar los datos !</div>';
-    }
-  } else {
-
-    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. código exite!</div>';
   }
+
+
+  }else{
+
+    $alertEvent = "Ya ese rut esta registrado.";
+    $event="info";
+
+  }
+
+  }else{
+
+   $alertEvent = "Ya ese nombre de usuario esta en uso, prueba con otro.";
+   $event="info";
+
+  }
+
+   
 }
 
 ?>
@@ -119,6 +153,16 @@ if (isset($_POST['add'])) {
       <div class="row">
         <div class="col-md-6 col-md-offset-3" style="margin-bottom: 5%;">
           <div class="userccount">
+            
+            <?php if(!empty($alertEvent)){?>
+
+              <!--Alert de evento-->
+              <?php echo "<div class='alert alert-".$event."'>" ?>
+              <?php echo $alertEvent ?> 
+              </div>
+
+            <?php }?>
+
             <div class="socialLogin">
               <h5>Registro</h5>
             </div>
@@ -156,9 +200,9 @@ if (isset($_POST['add'])) {
                     <input type="text" name="confirmar" class="form-control" placeholder="Confirmar clave">
                   </div>
 
-                  <div class="formrow">
+                  <!--<div class="formrow">
                     <input type="text" name="ubicacion" class="form-control" placeholder="Dirección">
-                  </div>
+                  </div>-->
 
                   <div class="formrow">
                     <input type="text" name="telefono" class="form-control" placeholder="Teléfono">
