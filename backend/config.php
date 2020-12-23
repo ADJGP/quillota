@@ -2,8 +2,8 @@
 <?php
 // Enter your Host, username, password, database below.
 // I left password empty because i do not set password on localhost.
-#$con = mysqli_connect("localhost","root","","quillota");
-$con = mysqli_connect("localhost","tarjhgww_root","metasoft123.","tarjhgww_quillota");
+$con = mysqli_connect("localhost","root","","quillota");
+#$con = mysqli_connect("localhost","tarjhgww_root","metasoft123.","tarjhgww_quillota");
 
 //Limite de registros para paginacion
 define('NUM_ITEMS_BY_PAGE', 42);
