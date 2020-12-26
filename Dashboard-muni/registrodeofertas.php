@@ -7,7 +7,7 @@ session_start();
 
 $id=$_SESSION['id'];
 $username=$_SESSION['username'];
-
+         $muni=$_SESSION['id_comuna'];
 ?>
 
 
@@ -44,7 +44,7 @@ $username=$_SESSION['username'];
             if(isset($_POST['add'])){
                 
 
-                $muni    = mysqli_real_escape_string($con,(strip_tags($_POST["municipalidad"],ENT_QUOTES)));
+             
                 $titulo  = mysqli_real_escape_string($con,(strip_tags($_POST["titulo"],ENT_QUOTES)));
                 $detalles = mysqli_real_escape_string($con,(strip_tags($_POST["detalles"],ENT_QUOTES)));
                 $lugar   = mysqli_real_escape_string($con,(strip_tags($_POST["lugar"],ENT_QUOTES))); 
@@ -57,8 +57,9 @@ $username=$_SESSION['username'];
             
 
                 
-                $insert = mysqli_query($con, "INSERT INTO ofertas (id_muni, titulo, detalles, lugar, rubro, experiencia, edad, fecha, sueldo)
-                                                            VALUES('$muni','$titulo','$detalles','$lugar','$rubro','$experiencia','$edad','$fecha','$sueldo')") or die(mysqli_error());
+          $insert = mysqli_query($con, "INSERT INTO ofertas ( id_muni, titulo, detalles, lugar, id_rubro, experiencia, edad, fecha, sueldo) VALUES ('$muni','$titulo','$detalles','$lugar','$rubro','$experiencia','$edad','$fecha','$sueldo')") or die(mysqli_error());
+
+           
                         if($insert){
                             echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Bien hecho! Los datos han sido guardados con éxito.</div>';
                         }else{
@@ -104,31 +105,20 @@ $username=$_SESSION['username'];
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Muni</label>
-                    <div class="col-sm-3">
-                       <select name="municipalidad" class="form-control">
-                <option > Municipalidad </option>
-                <option value="1">Quillota</option>
-                <option value="2">La calera</option>
-                <option value="3">Hijuelas</option>
-                <option value="4">Nogales</option>
-                <option value="5">La Cruz</option>
-            </select>
-                    </div>
-                </div>
-                
+          
 
                   <div class="form-group">
                     <label class="col-sm-3 control-label">Rubro</label>
                     <div class="col-sm-3">
                        <select name="rubro" class="form-control">
-              <option > Rubro </option>
-                <option value="Transporte">Transporte</option>
-                <option value="Informatica">Informatica</option>
-                <option value="Medicina">Medicina</option>
-                <option value="Comercio">Comercio</option>
-                <option value="Seguridad">Seguridad</option>
+                    <?php 
+                $query = $con -> query ("SELECT * FROM dic_rubros");
+                    
+while ($valores = mysqli_fetch_array($query)) {
+                        
+  echo '<option value="'.$valores['id_rubro'].'">'.$valores['rubro'].'</option>';
+} ?>
+              
             </select>
                     </div>
                 </div>
@@ -154,11 +144,62 @@ $username=$_SESSION['username'];
                     </div>
                 </div>
 
-
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Edad</label>
-                    <div class="col-sm-4">
-                        <input type="text" name="edad" class="form-control" placeholder="Sueldo" required>
+                    <div class="col-sm-3">
+                 <select name="edad" class="form-control">
+
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                   
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option>
+                    <option value="51">51</option>
+                    <option value="52">52</option>
+                    <option value="53">53</option>
+                    <option value="54">54</option>
+                    <option value="55">55</option>
+                    <option value="56">56</option>
+                    <option value="57">57</option>
+                       <option value="58">58</option>
+                        <option value="59">59</option>
+                        <option value="60">60</option>
+                    <option value="61">61</option>
+                    <option value="62">62</option>
+                 <option value="63">63</option>
+                 <option value="64">64</option>
+ 
+
+                 </select>
                     </div>
                 </div>
 

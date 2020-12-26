@@ -34,6 +34,10 @@ if($num_total_rows>0){
   <link href="css/owl.carousel.css" rel="stylesheet">
 
   <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Font Awesome -->
@@ -748,23 +752,41 @@ if($num_total_rows>0){
 
 
 
-      <ul class="testimonialsList">
+      <div class="container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+   
 
-        <!--user 1 Start-->
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" style="height: 100%">
+      <div class="item active"  >
+        <iframe src="https://drive.google.com/file/d/1_IzYuk4Gfiz9o6frywddwwtONTrbVCBl/preview" style="width: 100%;
+    height: -webkit-fill-available; "  ></iframe>
+      </div>
 
-        <li class="item">
+      <div class="item">
+       <iframe src="https://drive.google.com/file/d/13dLSEmpa13JAthalkIuea4h6cP_okwlV/preview" style="width: 100%;
+    height: -webkit-fill-available; "></iframe>
+      </div>
+    
+      <div class="item">
+        <iframe src="https://drive.google.com/file/d/1hZb9vBJshH_knI9VxB1ghLngKL4QYfpY/preview"  style="width: 100%;
+    height: -webkit-fill-available; " ></iframe>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
 
 
-          <iframe src="https://drive.google.com/file/d/1Yi5j17hMvAtMBi6YhOYQHHmGyUfEvJsk/preview" width="640" height="480"></iframe>
-          <!-- <div class="testimg"><img src="images/userimg.jpg" alt="Your alt text here" /></div>
-
-        <div class="clientname">Jimena Hernández | Asistente Administrativa</div>
-
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra id nunc at finibus. Etiam sollicitudin faucibus cursus. Proin luctus cursus nulla sed iaculis. Quisque vestibulum augue nec aliquet aliquet."</p>
-
-        <div class="clientinfo">Administración - COPEC</div> -->
-
-        </li>
 
         <!--user 1 end-->
 
@@ -772,17 +794,6 @@ if($num_total_rows>0){
 
         <!--user 2 Start-->
 
-        <li class="item">
-
-          <div class="testimg"><img src="images/userimg.jpg" alt="Your alt text here" /></div>
-
-          <div class="clientname">Jorge López</div>
-
-          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra id nunc at finibus. Etiam sollicitudin faucibus cursus. Proin luctus cursus nulla sed iaculis. Quisque vestibulum augue nec aliquet aliquet."</p>
-
-          <div class="clientinfo">Operario - Torre</div>
-
-        </li>
 
         <!--user 2 end-->
 
@@ -893,7 +904,8 @@ if($num_total_rows>0){
   <script src="js/jquery-2.1.4.min.js"></script>
 
   <script src="js/bootstrap.min.js"></script>
-
+<script src="/docs/4.0/assets/js/vendor/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script><script src="/docs/4.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script><script src="/docs/4.0/assets/js/docs.min.js"></script>
+  
 
 
   <!-- Owl carousel -->

@@ -1,5 +1,18 @@
 
-<?php include("../backend/config.php"); ?>
+<?php include("../backend/config.php"); 
+
+
+
+session_start(); 
+
+
+$id=$_SESSION['id'];
+$username=$_SESSION['username'];
+$comuna=$_SESSION['id_comuna'];
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +24,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Tabla entrevistaspendientes</title>
+    <title>Tabla usuarios</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -91,14 +104,20 @@
                                     <tbody>
                                       <?php
                
-                    $sql = mysqli_query($con, "SELECT * FROM users INNER JOIN informacion_personal ON users.rut = informacion_personal.rut");
+                    $sql = mysqli_query($con, "SELECT * FROM users 
+INNER JOIN informacion_personal
+INNER JOIN dic_comunas
+WHERE users.id_comuna='$comuna'
+AND users.id_comuna=dic_comunas.id_comuna
+AND users.tipo='2'
+GROUP BY users.rut ");
              
                 if(mysqli_num_rows($sql) == 0){
                     echo '<tr><td colspan="8">No hay datos.</td></tr>';
                 }else{
                     $no = 1;
                     while($row = mysqli_fetch_assoc($sql)){
-$municipalidad=$row['municipalidad'];
+
                      
                         echo '
                         <tr>
@@ -115,17 +134,7 @@ $municipalidad=$row['municipalidad'];
                            
  
 
-if ($municipalidad==1) {
-    echo "<td>Quillota</td>";
-} elseif ($municipalidad == 2) {
-  echo "<td>La calera</td>";
-} elseif ($municipalidad == 3) {
-    echo "<td>Hijuela</td>";
-} elseif ($municipalidad == 4) {
-     echo "<td>Nogales</td>";}
- elseif ($municipalidad == 5) {
-    echo "<td>La cruz</td>";
-}
+
 
 
 

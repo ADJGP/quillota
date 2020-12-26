@@ -2,15 +2,12 @@
 include "class.phpmailer.php";
 include "class.smtp.php";
 include "../backend/config.php";
-
 session_start(); 
 
 
 $id=$_SESSION['id'];
 $username=$_SESSION['username'];
 $comuna=$_SESSION['id_comuna'];
-
-
 
 if(isset($_POST["correo"])){
 
