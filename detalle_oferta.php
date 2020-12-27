@@ -87,7 +87,7 @@ $emp=mysqli_fetch_array($row2);
 <![endif]-->
 
 </head>
-
+<?php if(isset($_SESSION['sesion'])) { ?>
 <body>
         <!-- Header start -->
         <?php include('estructura/menu.php'); ?>
@@ -186,5 +186,9 @@ $emp=mysqli_fetch_array($row2);
         <!-- Custom js -->
         <script src="js/script.js"></script>
 </body>
+<?php } else {
 
+header('location: login.php');
+
+} ?>
 </html>
