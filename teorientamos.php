@@ -1,8 +1,6 @@
 <?php 
 include("backend/auth.php");
 include("backend/config.php");
-session_start(); 
-
 
 $id=$_SESSION['id'];
 $username=$_SESSION['username'];
