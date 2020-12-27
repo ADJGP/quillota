@@ -84,24 +84,35 @@ $num_total_rows = $row['total_ofertas'];
 
             <div class="container">
 
-                <?php if ($result->num_rows > 0) {
-            echo '<div class="jobslist row">';
-            while ($row = $result->fetch_assoc()) {
-                echo '<li class="col-md-4 col-sm-6">';
-                echo '<div class="jobint">';
-                echo '<div class="row">';
-                #echo '<div class="col-md-2 col-sm-2"><img src="images/employers/emplogo1.jpg" alt="Job Name" /></div>';
-                echo '<div class="col-md-12 col-sm-12">';
-                echo '<a href="#.">' . $row['titulo'] . '</a>';
-                echo '<div class="company"><a href="#.">Datebase Management Company</a></div>';
-                echo '<div class="jobloc"><label class="fulltime">Full Time</label> - <span>New York</span></div>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo '</li>';
-            }
-            echo '</div>';
-        } ?>
+                       
+        <div class="col-md-12 col-sm-12">
+
+<?php if ($result->num_rows > 0) { ?>
+<!-- Search List -->
+<ul class="searchList">
+<?php while ($row = $result->fetch_assoc()) { ?>
+  <!-- job start -->
+  <li>
+    <div class="row">
+      <div class="col-md-8 col-sm-8">
+        <div class="jobimg"><img src="images/jobs/jobimg.jpg" alt="Job Name"></div>
+        <div class="jobinfo">
+          <h3><a href="#."><?php echo $row['titulo'] ?></a></h3>
+          <div class="companyName"><a href="#."><?php echo $row['detalles'] ?></a></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="listbtn"><a href="detalle_oferta.php?oferta=<?php echo $row['id'] ?>" ?>Postular</a></div>
+      </div>
+    </div>
+  </li>
+  <!-- job end -->
+  <?php } ?> 
+     </ul> 
+  <?php } ?> 
+  
+</div>
                 <!--Paginacion-->
                 <div class="viewallbtn">
                 <?php echo '<nav>';

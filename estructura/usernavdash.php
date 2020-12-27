@@ -18,6 +18,6 @@
             <li><a href="habilidades.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Habilidades</a></li>
             <li><a href="ver_cv.php"><i class="fa fa-trash" aria-hidden="true"></i> Ver CV</a></li>
             <li><a href="#"><i class="fa fa-commenting" aria-hidden="true"></i> Postulacion </a></li>
-            <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a></li>
+            <li><a href="salir.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a></li>
           </ul>
 </div>
