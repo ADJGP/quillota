@@ -15,16 +15,12 @@ session_start();
 
   <!-- Fav Icon -->
   <link rel="shortcut icon" href="favicon.ico">
-
   <!-- Owl carousel -->
   <link href="css/owl.carousel.css" rel="stylesheet">
-
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Font Awesome -->
   <link href="css/font-awesome.css" rel="stylesheet">
-
   <!-- Custom Style -->
   <link href="css/main.css" rel="stylesheet">
 

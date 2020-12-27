@@ -1,13 +1,33 @@
 <?php
 include("backend/config.php");
 session_start();
-$result = $con->query("SELECT COUNT(*) as total_empresas FROM empresas WHERE  status=1");
-$row = $result->fetch_assoc();
-$num_total_rows = $row['total_empresas'];
-#echo $num_total_rows; //739
+
+$empresa='';
+
+if(isset($_GET['empresa'])){
+
+$empresa=$_GET['empresa'];
+
+}else{
+
+$empresa=null;
+
+}
+
+//Buscar la empresa
+$query="SELECT * FROM empresas WHERE nombre='".$empresa."'";
+$row=$con->query($query);
+$emp=mysqli_fetch_array($row);
+//echo $emp['nombre'];
+
+
+//Buscar las ofertas de la empresa
+//echo $q="SELECT COUNT(*) as total_ofertas FROM ofertas WHERE id_empresa=".$emp['id_empresa'];
+$result2 = $con->query("SELECT COUNT(*) as total_ofertas FROM ofertas WHERE id_empresa=".$emp['id_empresa']);
+$row2 = $result2->fetch_assoc();
+$num_total_rows = $row2['total_ofertas'];
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +61,29 @@ $num_total_rows = $row['total_empresas'];
 </head>
 
 <body>
+        <!-- Header start -->
+        <?php include('estructura/menu.php'); ?>
+        <!-- Header end -->
+
+
+            <!-- Page Title start -->
+            <div class="pageTitle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <h1 class="page-heading"><label for="">Ofertas de empleo de <?php echo $emp['nombre'] ?></label></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page Title End -->
+
+            <!-- Latest Jobs start -->
+
+           <div class="section greybg">
+
+           <div class="container">
+
     <?php
     if ($num_total_rows > 0) {
         $page = false;
@@ -59,63 +102,40 @@ $num_total_rows = $row['total_empresas'];
         //calculo el total de paginas
         $total_pages = ceil($num_total_rows / NUM_ITEMS_BY_PAGE);
 
-        $result = $con->query("SELECT * FROM empresas WHERE status = 1 ORDER BY rut ASC LIMIT " . $start . ", " .NUM_ITEMS_BY_PAGE);
+        $result = $con->query("SELECT * FROM ofertas WHERE  id_empresa=".$emp['id_empresa']." ORDER BY id DESC LIMIT " . $start . ", " .NUM_ITEMS_BY_PAGE);
         
         ?>
         
-       
-        <!-- Header start -->
-        <?php include('estructura/menu.php'); ?>
-        <!-- Header end -->
-
-        <!-- Page Title start -->
-        <div class="pageTitle">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <h1 class="page-heading"><label for="">Listado de Empresas</label></h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Page Title End -->
-
-        <!-- Latest Jobs start -->
-
-        <div class="section greybg">
-
-        <div class="container">
         <div class="col-md-12 col-sm-12">
 
-        <?php if ($result->num_rows > 0) { ?>
-        <!-- Search List -->
-        <ul class="searchList">
-        <?php while ($row = $result->fetch_assoc()) { ?>
-          <!-- job start -->
-          <li>
-            <div class="row">
-              <div class="col-md-8 col-sm-8">
-                <div class="jobimg"><img src="images/jobs/jobimg.jpg" alt="Job Name"></div>
-                <div class="jobinfo">
-                  <h3><a href="#."><?php echo $row['nombre'] ?></a></h3>
-                  <div class="companyName"><a href="#."><?php echo $row['direccion'] ?></a></div>
-                  <div class="location"><span>Estado</span>  - <label class="fulltime">Activa</label></div>
-                </div>
-                <div class="clearfix"></div>
-              </div>
-              <div class="col-md-4 col-sm-4">
-                <div class="listbtn"><a href="lista_ofertas_empresas.php?empresa=<?php echo $row['nombre'] ?>">Ver Ofertas</a></div>
-              </div>
-            </div>
-          </li>
-          <!-- job end -->
-          <?php } ?> 
-             </ul> 
-          <?php } ?> 
-          
-       </div>
-        
-     
+<?php if ($result->num_rows > 0) { ?>
+<!-- Search List -->
+<ul class="searchList">
+<?php while ($row = $result->fetch_assoc()) { ?>
+  <!-- job start -->
+  <li>
+    <div class="row">
+      <div class="col-md-8 col-sm-8">
+        <div class="jobimg"><img src="images/jobs/jobimg.jpg" alt="Job Name"></div>
+        <div class="jobinfo">
+          <h3><a href="#."><?php echo $row['titulo'] ?></a></h3>
+          <div class="companyName"><a href="#."><?php echo $row['detalles'] ?></a></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="listbtn"><a href="detalle_oferta.php?oferta=<?php echo $row['id'] ?>" ?>Postular</a></div>
+      </div>
+    </div>
+  </li>
+  <!-- job end -->
+  <?php } ?> 
+     </ul> 
+  <?php } ?> 
+  
+</div>
+
+
                 <!--Paginacion-->
                 <div class="viewallbtn">
                 <?php echo '<nav>';
@@ -140,6 +160,8 @@ $num_total_rows = $row['total_empresas'];
                 }
                 echo '</ul>';
                 echo '</nav>';
+            }else{
+                echo "<h3>Esta empresa aun no ha publicado ofertas.</h3>";
             }
                 ?>
                 </div>

@@ -1,5 +1,6 @@
 <?php
 include("backend/config.php");
+require_once('PHPMailer/config.php');
 session_start();
 ?>
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ session_start();
   <?php 
   
   include("estructura/menu.php");
-  require_once('PHPMailer/config.php');
+  
   $alertEvent='';
   
   if(isset($_POST['name'])){

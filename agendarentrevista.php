@@ -25,6 +25,7 @@ require('backend/config.php');
 
 </head>
 
+<?php if(isset($_SESSION['sesion'])) { ?>
 <body>
   <!-- Header start -->
   <?php include("estructura/menu.php"); ?>
@@ -172,5 +173,9 @@ require('backend/config.php');
     });
   </script>
 </body>
+<?php } else {
 
+header('location: login.php');
+
+} ?>
 </html>

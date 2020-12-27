@@ -1,3 +1,8 @@
+<?php 
+include("backend/config.php");
+session_start();
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,34 +55,9 @@
 <div class="listpgWraper">
   <div class="container">
     <div class="row">
-      <div class="col-md-3 col-sm-4">
-      	
-        <div class="switchbox">
-        	<div class="txtlbl">Disponibilidad inmediata <i class="fa fa-info-circle" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus consectetur sagittis. Duis vitae urna vehicula, ornare nibh non, aliquet neque. In vitae erat ut augue suscipit." data-original-title="" title=""></i></div>
-            <div class="pull-right"><label class="switch switch-green">
-              <input type="checkbox" class="switch-input">
-              <span class="switch-label" data-on="On" data-off="Off"></span>
-              <span class="switch-handle"></span>
-            </label></div>
-            <div class="clearfix"></div>
-        </div>
-      
-        <ul class="usernavdash">
-          <li class="active"><a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i> Escritorio</a></li>
-          <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Mis detalles</a></li>
-          <li><a href="#"><i class="fa fa-desktop" aria-hidden="true"></i> Mis trabajos postulados</a></li>
-          <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> Ver CV</a></li>
-          <li><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Construir CV</a></li>
-          <li><a href="#"><i class="fa fa-trash" aria-hidden="true"></i> Borrar CV</a></li>
-          <li><a href="#"><i class="fa fa-commenting" aria-hidden="true"></i> Retroalimentación</a></li>
-          <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i> Seguidores</a></li>
-          
-          <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i> Ajustes de la cuenta</a></li>
-          <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a></li>
-        </ul>
-      </div>
+    <?php include("estructura/usernavdash.php"); ?>
       <div class="col-md-9 col-sm-8">
-        <ul class="row profilestat">
+        <!--<ul class="row profilestat">
           <li class="col-md-2 col-sm-4 col-xs-6">
             <div class="inbox"> <i class="fa fa-eye" aria-hidden="true"></i>
               <h6>10</h6>
@@ -108,7 +88,7 @@
               <h6>8</h6>
               <strong>Mensajes</strong> </div>
           </li>
-        </ul>
+        </ul>-->
         
        
           

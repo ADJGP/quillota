@@ -1,10 +1,32 @@
+<?php 
+include("backend/config.php");
+session_start();
+
+$searchUser = "SELECT * FROM informacion_personal WHERE rut = '".$_SESSION['rut']."'";
+$result = $con->query($searchUser);
+$User = mysqli_fetch_array($result);
+
+if(isset($_POST['guardar'])){
+
+  $query = "UPDATE informacion_personal SET nombres = '".$_POST['nombres']."', apellidos = '".$_POST['apellidos']."', rut = '".$_POST['rut']."', fecha_nacimiento = '".$_POST['fecha_nacimiento']."', telefono = '".$_POST['telefono']."', correo = '".$_POST['email']."' WHERE id_usuario='".$_SESSION['id']."'";
+
+  if($con->query($query)){
+    header('location: edit-profile.php?exito=true;');
+  }else{
+    header('location: edit-profile.php?error=true;');
+  }
+  
+}
+
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Online Job Portal HTML</title>
+<title>Portal virtual de trabajo</title>
 <!-- Fav Icon -->
 <link rel="shortcut icon" href="favicon.ico">
 
@@ -35,7 +57,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Editar perfil</h1>
+        <h1 class="page-heading">Editar datos personales</h1>
       </div>
       <div class="col-md-6 col-sm-6">
     
@@ -48,293 +70,58 @@
 <div class="listpgWraper">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+    
+    <?php include("estructura/usernavdash.php"); ?>
+      <div class="col-md-9 col-sm-8">
+        <?php if(isset($_GET['exito'])){ ?>
+        <div class="alert alert-success">
+        Actualizacion exitosa!
+        </div>
+        <?php } ?>
+        <?php if(isset($_GET['error'])){ ?>
+        <div class="alert alert-danger">
+        Ha ocurrido un error, tu actualizacion no se completo.
+        </div>
+        <?php } ?>
         <div class="userccount">
           <div class="formpanel"> 
             
+          <form action="" method="POST">
             <!-- Personal Information -->
-            <h5>Editar informacion</h5>
+            <h5>Datos Personales</h5>
             <div class="row">
               <div class="col-md-6">
                 <div class="formrow">
-                  <input type="text" name="name" class="form-control" placeholder="User Name">
+                  <input type="text" name="nombres" class="form-control" placeholder="Nombres" value="<?php echo $User['nombres']; ?>">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="formrow">
-                  <input type="text" name="email" class="form-control" placeholder="Correo">
+                  <input type="text" name="apellidos" class="form-control" placeholder="Apellidos" value="<?php echo $User['apellidos']; ?>">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="formrow">
-                  <input type="text" name="phone" class="form-control" placeholder="Telefono">
+                  <input type="text" name="rut" class="form-control" placeholder="RUT" value="<?php echo $User['rut']; ?>">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="formrow">
-                  <input type="text" name="website" class="form-control" placeholder="Website">
+                  <input type="date" name="fecha_nacimiento" class="form-control" placeholder="Fecha de nacimiento" value="<?php echo $User['fecha_nacimiento']; ?>">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="formrow">
-                  <input type="text" name="address" class="form-control" placeholder="Direccion">
+                  <input type="text" name="telefono" class="form-control" placeholder="Telefono" value="<?php echo $User['telefono']; ?>">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="formrow">
-                  <input type="text" name="designation" class="form-control" placeholder="Designacion">
+                  <input type="text" name="email" class="form-control" placeholder="Correo Electrónico" value="<?php echo $User['correo']; ?>">
                 </div>
               </div>
-              <div class="col-md-3">
-                <div class="formrow">
-                  <select class="form-control" name="experience">
-                    <option>Experiencia</option>
-                    <option>Fresh</option>
-                    <option>1 Año</option>
-                    <option>2 Años</option>
-                    <option>3 Años</option>
-                    <option>4 Años</option>
-                    <option>5 Años</option>
-                    <option>6 Años</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="formrow">
-                  <select class="form-control" name="age">
-                    <option>Edad</option>
-                    <option>20 Años</option>
-                    <option>21 Años</option>
-                    <option>22 Años</option>
-                    <option>23 Años</option>
-                    <option>24 Años</option>
-                    <option>25 Años</option>
-                    <option>26 Años</option>
-                    <option>27 Años</option>
-                    <option>28 Años</option>
-                    <option>29 Años</option>
-                    <option>30 Años</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="formrow">
-                  <select class="form-control" name="current">
-                    <option>Current Salary</option>
-                    <option>$500 - $999</option>
-                    <option>$999 - $1499</option>
-                    <option>$1500 - $1999</option>
-                    <option>$2000 - $3000</option>
-                    <option>$3000+</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="formrow">
-                  <select class="form-control" name="demand">
-                    <option>Demand</option>
-                    <option>$500 - $999</option>
-                    <option>$999 - $1499</option>
-                    <option>$1500 - $1999</option>
-                    <option>$2000 - $3000</option>
-                    <option>$3000+</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="edulevel" class="form-control" placeholder="Education Level">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="file" name="uploadcv" class="form-control">
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="formrow">
-                  <textarea name="aboutme" class="form-control" placeholder="About Me"></textarea>
-                </div>
-              </div>
-            </div>
-            <hr>
-            
-            <!-- Skills -->
-            <h5>Habilidades</h5>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="skill" class="form-control" placeholder="Skill Name">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="skilllevel" class="form-control" placeholder="Skill Level in %">
-                </div>
-              </div>
-            </div>
-            <a href="#.">Add Other</a>
-            <hr>
-            
-            <!-- Education -->
-            <h5>Education</h5>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="degreename" class="form-control" placeholder="Degree Name">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="degreedate" class="form-control" placeholder="Degree Compelete Date">
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="formrow">
-                  <textarea class="form-control" name="aboutdeg" placeholder="About Degree"></textarea>
-                </div>
-              </div>
-            </div>
-            <a href="#.">Add Other</a>
-            <hr>
-            
-            <!-- Experience -->
-            <h5>Experience</h5>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="company" class="form-control" placeholder="Company">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="webcom" class="form-control" placeholder="Company Website">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="formrow">
-                  <select class="form-control" name="join-frm">
-                    <option>Join From</option>
-                    <option>2011</option>
-                    <option>2012</option>
-                    <option>2013</option>
-                    <option>2014</option>
-                    <option>2015</option>
-                    <option>2016</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="formrow">
-                  <select class="form-control" name="endon">
-                    <option>End on</option>
-                    <option>2011</option>
-                    <option>2012</option>
-                    <option>2013</option>
-                    <option>2014</option>
-                    <option>2015</option>
-                    <option>Present</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="location" class="form-control" placeholder="Location">
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="formrow">
-                  <textarea class="form-control" name="about-company" placeholder="About Company"></textarea>
-                </div>
-              </div>
-            </div>
-            <a href="#.">Add Other</a>
-            <hr>
-            
-            <!-- Portfolio -->
-            <h5>Portfolio</h5>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="projname" class="form-control" placeholder="Project Name">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="formrow">
-                  <select class="form-control" name="startfrm">
-                    <option>Srart From</option>
-                    <option>2011</option>
-                    <option>2012</option>
-                    <option>2013</option>
-                    <option>2014</option>
-                    <option>2015</option>
-                    <option>2016</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="formrow">
-                  <select class="form-control" name="endon2">
-                    <option>End on</option>
-                    <option>2011</option>
-                    <option>2012</option>
-                    <option>2013</option>
-                    <option>2014</option>
-                    <option>2015</option>
-                    <option>Present</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="formrow">
-                  <input type="text" name="projdesc" class="form-control" placeholder="Project Short Description">
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="formrow">
-                  <input type="file" name="image" class="form-control">
-                </div>
-              </div>
-            </div>
-            <a href="#.">Add Other</a>
-            <hr>
-            
-            <!-- Social -->
-            <h5>Social</h5>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="fb" class="form-control" placeholder="Facebook">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="twitter" class="form-control" placeholder="Twitter">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="gplus" class="form-control" placeholder="Google Plus">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="linkedin" class="form-control" placeholder="Linked In">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" name="pinterest" class="form-control" placeholder="Pinterest">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="formrow">
-                  <input type="text" class="form-control" placeholder="Behance">
-                </div>
-              </div>
-            </div>
-            <br>
-            <input type="submit" class="btn" value="Update and Save">
+            <input type="submit" name='guardar' class="btn" value="Guardar">
+            </form>
           </div>
         </div>
       </div>
