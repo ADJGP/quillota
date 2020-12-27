@@ -53,7 +53,7 @@ include("backend/config.php");
       <div class="col-md-6 col-sm-6">
         <h1 class="page-heading">Análisis Foda</h1>
       </div>
-      <div class="viewallbtn"><a href="#.">Ver todos los trabajos</a></div>
+      <div class="viewallbtn"><a href="listado_ofertas.php">Ver todos los trabajos</a></div>
     </div>
   </div>
 </div>

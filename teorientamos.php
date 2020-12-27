@@ -49,7 +49,7 @@ $username=$_SESSION['username'];
         <h1 class="page-heading">Te Orientamos</h1>
       </div>
       
-      <div class="viewallbtn"><a href="#.">Ver todos los trabajos</a></div>
+      <div class="viewallbtn"><a href="listado_ofertas.php">Ver todos los trabajos</a></div>
       
     </div>
   </div>
