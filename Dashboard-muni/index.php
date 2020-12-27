@@ -10,7 +10,7 @@ $id=$_SESSION['id'];
 $username=$_SESSION['username'];
 $comuna=$_SESSION['id_comuna'];
 
-
+ini_set('error_reporting', E_ALL);
 
 
 

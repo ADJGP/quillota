@@ -39,7 +39,10 @@ $username=$_SESSION['username'];
 
 
 
-<?php include('../estructura/menumuni.php') ?>
+<?php include('../estructura/menumuni.php'); 
+ini_set('error_reporting', E_ALL);
+
+?>
 <?php
             if(isset($_POST['add'])){
                 
