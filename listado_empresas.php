@@ -86,6 +86,17 @@ $num_total_rows = $row['total_empresas'];
 
         <div class="container">
         <div class="col-md-12 col-sm-12">
+        <!-- Buscador -->
+        <form action="listado_empresas_filtrado.php" method="POST">
+        <div class="row">
+        <div class="col-md-11">
+        <input type="text" class="form-control" name="keywords" placeholder="Referencia de busqueda">
+        </div>
+        <button class="btn btn-success">Buscar</button>
+        </div>
+        </form>
+        <br>
+        <!-- Buscador -->
 
         <?php if ($result->num_rows > 0) { ?>
         <!-- Search List -->

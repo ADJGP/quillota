@@ -1,10 +1,12 @@
 <?php
 include("backend/config.php");
 session_start();
-$result = $con->query("SELECT COUNT(*) as total_ofertas FROM ofertas");
+
+$palabras = $_POST['keywords'];
+
+$result = $con->query("SELECT COUNT(*) as total_ofertas FROM ofertas WHERE titulo LIKE '%" . $palabras . "%'");
 $row = $result->fetch_assoc();
 $num_total_rows = $row['total_ofertas'];
-#echo $num_total_rows; //739
 ?>
 
 <!DOCTYPE html>
@@ -39,29 +41,6 @@ $num_total_rows = $row['total_ofertas'];
 </head>
 
 <body>
-    <?php
-    if ($num_total_rows > 0) {
-        $page = false;
-
-        //examino la pagina a mostrar y el inicio del registro a mostrar
-        if (isset($_GET["page"])) {
-            $page = $_GET["page"];
-        }
-
-        if (!$page) {
-            $start = 0;
-            $page = 1;
-        } else {
-            $start = ($page - 1) * NUM_ITEMS_BY_PAGE;
-        }
-        //calculo el total de paginas
-        $total_pages = ceil($num_total_rows / NUM_ITEMS_BY_PAGE);
-
-        $result = $con->query("SELECT * FROM ofertas ORDER BY id DESC LIMIT " . $start . ", " .NUM_ITEMS_BY_PAGE);
-        
-        ?>
-        
-       
         <!-- Header start -->
         <?php include('estructura/menu.php'); ?>
         <!-- Header end -->
@@ -98,6 +77,31 @@ $num_total_rows = $row['total_ofertas'];
         </form>
         <br>
         <!-- Buscador -->
+
+    <?php
+    if ($num_total_rows > 0) {
+        $page = false;
+
+        //examino la pagina a mostrar y el inicio del registro a mostrar
+        if (isset($_GET["page"])) {
+            $page = $_GET["page"];
+        }
+
+        if (!$page) {
+            $start = 0;
+            $page = 1;
+        } else {
+            $start = ($page - 1) * NUM_ITEMS_BY_PAGE;
+        }
+        //calculo el total de paginas
+        $total_pages = ceil($num_total_rows / NUM_ITEMS_BY_PAGE);
+
+        $result = $con->query("SELECT * FROM ofertas WHERE titulo LIKE '%" . $palabras . "%' ORDER BY id DESC LIMIT " . $start . ", " .NUM_ITEMS_BY_PAGE);
+        
+        ?>
+        
+       
+    
 
 <?php if ($result->num_rows > 0) { ?>
 <!-- Search List -->
@@ -149,6 +153,10 @@ $num_total_rows = $row['total_ofertas'];
                 }
                 echo '</ul>';
                 echo '</nav>';
+            }else{
+             
+                echo "<h3>No hay coincidencias</h3>";
+
             }
                 ?>
                 </div>
