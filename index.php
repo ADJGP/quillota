@@ -7,18 +7,8 @@ error_reporting(E_ALL);
 include("backend/config.php");
 session_start();
 $num_total_rows = '';
-$searchResults = 0;
 
 
-if(isset($_POST['palabraClave'])){
-
-$result = $con->query("SELECT * FROM ofertas WHERE titulo LIKE '".$_POST['palabraClave']."%' OR id_muni ='".$_POST['municipalidad']."' OR rubro ='".$_POST['tipo']."'");
-$row = $result->fetch_assoc();
-$num_total_rows = $result->num_rows;
-
-$searchResults = ($result->num_rows>0) ? 1 : 2 ;
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -61,9 +51,9 @@ $searchResults = ($result->num_rows>0) ? 1 : 2 ;
   <div class="searchwrap">
     <div class="container">
       <div class="searchbar row">
-        <form method="post" action="index.php">
+        <form method="post" action="index_result.php">
         <div class="col-md-5">
-            <input required name="palabraClave" type="text" class="form-control mb-2" id="inlineFormInput" />
+            <input required name="keywords" type="text" class="form-control mb-2" id="inlineFormInput" />
         </div>
         <div class="col-md-3">
           <select required name="tipo" class="form-control" >
@@ -90,109 +80,6 @@ $searchResults = ($result->num_rows>0) ? 1 : 2 ;
     </div>
   </div>
   <!-- Search End -->
-
-  <?php
-    if ($num_total_rows > 0) {
-        $page = false;
-
-        //examino la pagina a mostrar y el inicio del registro a mostrar
-        if (isset($_GET["page"])) {
-            $page = $_GET["page"];
-        }
-
-        if (!$page) {
-            $start = 0;
-            $page = 1;
-        } else {
-            $start = ($page - 1) * NUM_ITEMS_BY_PAGE;
-        }
-        //calculo el total de paginas
-        $total_pages = ceil($num_total_rows / NUM_ITEMS_BY_PAGE);
-
-        $result = $con->query("SELECT * FROM ofertas WHERE titulo LIKE '".$_POST['palabraClave']."%' OR id_muni ='".$_POST['municipalidad']."' OR rubro ='".$_POST['tipo']."' ORDER BY id ASC LIMIT " . $start . ", " .NUM_ITEMS_BY_PAGE);
-        
-        ?>
-
-
-<?php if($searchResults==1) { ?>
-<!-- Resultados de la busqueda -->
-<div class="section greybg">
-  <div class="container">
-                      <!-- title start -->
-                      <div class="titleTop">
-                        <div class="subtitle"><span>Resultados de tu busqueda</span> </div>
-                      </div>
-                      <!-- title end -->
-      
-
-                      <?php if ($result->num_rows > 0) {
-                      echo '<div class="jobslist row">';
-                      while ($row = $result->fetch_assoc()) {
-                      echo '<li class="col-md-4 col-sm-6">';
-                      echo '<div class="jobint">';
-                      echo '<div class="row">';
-                      #echo '<div class="col-md-2 col-sm-2"><img src="images/employers/emplogo1.jpg" alt="Job Name" /></div>';
-                      echo '<div class="col-md-12 col-sm-12">';
-                      echo '<a href="#.">' . $row['titulo'] . '</a>';
-                      echo '<div class="company"><a href="#.">'.$row['rubro'].'</a></div>';
-                      echo '<div class="jobloc"><label class="fulltime">'.$row['lugar'].'</label></div>';
-                      echo '</div>';
-                      echo '</div>';
-                      echo '</div>';
-                      echo '</li>';
-                      }
-                      echo '</div>';
-                      }
-                      ?>
-                      
-                      
-
-                     
-       <!--Paginacion-->
-       <div class="viewallbtn">
-          <?php echo '<nav>';
-            echo '<ul class="pagination">';
-
-          if ($total_pages > 1) {
-            if ($page != 1) {
-            echo '<li class="page-item"><a class="page-link" href="index.php?page=' . ($page - 1) . '"><span aria-hidden="true">&laquo;</span></a></li>';
-            }
-
-            for ($i = 1; $i <= $total_pages; $i++) {
-            if ($page == $i) {
-                echo '<li class="page-item active"><a class="page-link" href="#">' . $page . '</a></li>';
-            } else {
-                echo '<li class="page-item"><a class="page-link" href="listado_empresas.php?page=' . $i . '">' . $i . '</a></li>';
-            }
-            }
-
-            if ($page != $total_pages) {
-            echo '<li class="page-item"><a class="page-link" href="listado_empresas.php?page=' . ($page + 1) . '"><span aria-hidden="true">&raquo;</span></a></li>';
-            }
-            }
-            echo '</ul>';
-            echo '</nav>';
-            }
-            
-            ?>
-        </div>
-
-    <!--view button end-->
-  </div>
-</div>
-<!-- Resultados de la busqueda -->
-<?php }else if($searchResults==2){?>
-
-  <!-- Resultados de la busqueda -->
-<div class="section greybg">
-  <div class="container text-center">
-  <h2>No hay registros con esas coincidencias! </h2>
-  </div>
-</div>
-<!-- Resultados de la busqueda -->
-
-<?php } ?>
-
   <!-- How it Works start -->
   <div class="section howitwrap">
     <div class="container">
