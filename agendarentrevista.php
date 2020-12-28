@@ -1,4 +1,5 @@
 <?php
+require('backend/auth.php');
 require('backend/config.php');
 ?>
 
@@ -24,8 +25,6 @@ require('backend/config.php');
   <link href="css/main.css" rel="stylesheet">
 
 </head>
-
-<?php if(isset($_SESSION['sesion'])) { ?>
 <body>
   <!-- Header start -->
   <?php include("estructura/menu.php"); ?>
@@ -173,9 +172,4 @@ require('backend/config.php');
     });
   </script>
 </body>
-<?php } else {
-
-header('location: login.php');
-
-} ?>
 </html>
