@@ -18,7 +18,7 @@ $num_total_rows = '';
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title><?php echo $_SESSION['sesion']; ?></title>
+  <title>Portal virtual de trabajo</title>
 
   <!-- Fav Icon -->
   <link rel="shortcut icon" href="favicon.ico">
@@ -86,19 +86,21 @@ $num_total_rows = '';
 
       <!-- title start -->
       <div class="titleTop">
-        <div class="subtitle"><span>Aquí puedes ver cómo funciona</span> </div>
+        <div><span style="font-size: 150%; color:darkgrey">Aquí puedes ver</span></div>
+        <h1 style="margin-top: 1%;">¿Cómo funciona?</h1>
       </div>
       <!-- title end -->
-
-      <ul class="howlist row">
+      
+     
+      <ul class="howlist row" style="margin-left: 20%;">
         <!--step 1-->
-        <li class="col-md-4 col-sm-4">
+        <li class="col-md-3 col-sm-4">
           <a href="register.php">
             <div class="iconcircle"><i class="fa fa-user" aria-hidden="true"></i></div>
 
             <h4>Crea una cuenta </h4>
 
-            <p>Regístrate y conoce todas las funcionalidades y material informativo que te brinda la plataforma.</p>
+            <!--<p>Regístrate y conoce todas las funcionalidades y material informativo que te brinda la plataforma.</p>-->
           </a>
 
         </li>
@@ -109,13 +111,13 @@ $num_total_rows = '';
 
         <!--step 2-->
 
-        <li class="col-md-4 col-sm-4">
+        <li class="col-md-3 col-sm-4">
 
           <div class="iconcircle"><i class="fa fa-black-tie" aria-hidden="true"></i></div>
 
           <h4>Buscar un trabajo</h4>
 
-          <p>Infórmate con el material complementario y busca trabajo através de los medios que te brinda la plataforma.</p>
+          <!--<p>Infórmate con el material complementario y busca trabajo através de los medios que te brinda la plataforma.</p>-->
 
         </li>
 
@@ -125,7 +127,7 @@ $num_total_rows = '';
 
         <!--step 3-->
 
-        <li class="col-md-4 col-sm-4">
+        <li class="col-md-3 col-sm-4">
 
           <div class="iconcircle"><i class="fa fa-file-text" aria-hidden="true"></i></div>
 
@@ -133,14 +135,14 @@ $num_total_rows = '';
 
           </h4>
 
-          <p>Utiliza la funcionalidad que te brindamos para enviar tu curriculum por medio de nuestra plataforma.</p>
+          <!--<p>Utiliza la funcionalidad que te brindamos para enviar tu curriculum por medio de nuestra plataforma.</p>-->
 
         </li>
 
         <!--step 3 end-->
 
       </ul>
-
+      
     </div>
 
   </div>
@@ -251,7 +253,7 @@ $num_total_rows = '';
 
   <!-- Video start -->
 
-  <div class="videowraper section">
+  <div class="videowraper section" style="padding: 100px 0;">
 
     <div class="container">
 
@@ -259,11 +261,10 @@ $num_total_rows = '';
 
       <div class="titleTop">
 
-        <div class="subtitle">Aquí puedes ver</div>
+      <div><span style="font-size: 150%; color:white">Aquí puedes ver</span></div>
 
-        <h3>Mira Nuestro Video</h3>
+        <h3>Nuestra videoteca</h3>
 
-        <h3>Videoteca</h3>
 
 
 
@@ -273,7 +274,7 @@ $num_total_rows = '';
 
 
 
-      <p>Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non, semper orci.</p>
+      <!--<p>Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non, semper orci.</p>-->
 
       <a href="#."><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
     </div>
@@ -594,7 +595,7 @@ $num_total_rows = '';
 
   <!-- Video start -->
 
-  <div class="videowraper2 section">
+  <div class="videowraper2 section" style="padding: 100px 0;">
 
     <div class="container">
 
@@ -602,9 +603,10 @@ $num_total_rows = '';
 
       <div class="titleTop">
 
-        <div class="subtitle">Encuentra el trabajo ideal, con la ayuda de nuestro equipo profesional</div>
+        <div style="margin-bottom: 1%;font-size: 120%; color:white">Encuentra el trabajo ideal, con la ayuda de nuestro equipo profesional</div>
 
-        <h3>AQUÍ TE ORIENTAMOS</h3>
+        <h1 style="font-size: 500%; color:white">AQUÍ TE ORIENTAMOS</h1>
+        <button class="btn btn-primary btn-xl" style="font-size: 150%; margin-top:10%">Solicitar Entrevista</button>
 
 
 
@@ -616,22 +618,10 @@ $num_total_rows = '';
 
 
 
-      <p>Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non, semper orci.</p>
-
-
-
-
-
-
-
-    </div>
-
+      <!--<p>Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non, semper orci.</p>-->
   </div>
-
-
-
-  <div class="viewallbtn"><a href="#.">Solicita una entrevista</a></div>
-
+        
+  </div>
   <!-- Video end -->
 
 
@@ -642,25 +632,23 @@ $num_total_rows = '';
 
   <!-- Testimonials start -->
 
-  <div class="section">
+  <div class="section" style="padding: 120px 0;">
 
     <div class="container">
 
-      <!-- title start -->
+    
 
-      <div class="titleTop">
-
-        <div class="subtitle">Aquí puedes ver </div>
-
-        <h3><span>Historias de éxito </span></h3>
-
+       <!-- title start -->
+       <div class="titleTop">
+        <div><span style="font-size: 150%; color:darkgrey">Aquí puedes ver</span></div>
+        <h1 style="margin-top: 1%;">Historias de Exitos</h1>
       </div>
-
       <!-- title end -->
 
+  
 
 
-      <div class="container">
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel" >
    
 
@@ -692,7 +680,7 @@ $num_total_rows = '';
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div>
+
 
 
 

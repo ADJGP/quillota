@@ -47,11 +47,11 @@
 
       <!--About Us-->
 
-      <div class="col-md-2 col-sm-22">
+      <div class="col-md-3 col-sm-2">
 
        <!-- <div class="ft-logo"><img src="images/logo.png" alt="Your alt text here"></div> -->
 
-        <p>La OMIL-Qta es una oficina
+        <p>La Red Provincial de Quillota es una oficina
 
 perteneciente a la Municipalidad
 
@@ -79,7 +79,7 @@ orientación y vinculación laboral.</p>
 
       <!--Quick Links-->
 
-      <div class="col-md-2 col-sm-2">
+      <div class="col-md-3 col-sm-3">
 
         <h5>Nuestra Web
 
@@ -115,7 +115,7 @@ orientación y vinculación laboral.</p>
 
       <!--Jobs By Industry-->
 
-      <div class="col-md-2 col-sm-2">
+      <div class="col-md-3 col-sm-3">
 
         <h5>Enlaces Relevantes</h5>
 
@@ -147,7 +147,7 @@ orientación y vinculación laboral.</p>
 
       <!--Latest Articles-->
 
-      <div class="col-md-2 col-sm-22">
+      <div class="col-md-3 col-sm-3">
 
         <h5>Contáctanos</h5>
 
