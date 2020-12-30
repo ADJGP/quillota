@@ -1,57 +1,65 @@
 <div class="footerWrap">
 
 
-  <div class="container">
-  <div class="row"  >
-  
 
 
-     <div>
-    <div class="col-md-2">
-       <img src="images/Logo-oficina-municipal-sence-b-e-421x416px.png" alt="Your alt text here">
-    </div>
-  </div>
- <div>
-    <div class="col-md-2">
-       <img src="images/munis/lacalera.png"   alt="Your alt text here">
-    </div>
-     </div>
- <div>
-     <div class="col-md-2">
-       <img src="images/munis/lacruz.png" alt="Your alt text here">
-    </div>
-     </div>
- <div>
-    <div class="col-md-2">
-       <img src="images/munis/los-nogales.png"   alt="Your alt text here">
-    </div>
-     </div>
- <div>
-     <div class="col-md-2">
-       <img src="images/munis/quillota.png" alt="Your alt text here">
-    </div>
-     </div>
- <div>
-    <div class="col-md-2">
-       <img src="images/munis/hijuela.png"  alt="Your alt text here">
-    </div>
-     </div>
-   
-  </div>
+
+<!-- Three columns of text below the carousel -->
+
+      <div class="row " style="margin-left:20%">
+        <div class="col-sm-1" style="margin-left:1%">
+<img src="images/logo.png" style="width:150%;max-width:1500%"  alt="Your alt text here">
+
+        </div><!-- /.col-sm-1 -->
+        <div class="col-sm-1" style="margin-left:1%">
+         <img src="images/Logo-oficina-municipal-sence-b-e-421x416px.png" style="width:150%;max-width:1500%"  alt="Your alt text here"> 
+        
+        </div><!-- /.col-sm-1 -->
+        <div class="col-sm-1" style="margin-left:1%">
+ <img src="images/munis/lacalera.png"  style="width:150%;max-width:1500%"  alt="Your alt text here">
+
+        </div><!-- /.col-sm-1 -->
+
+<div class="col-sm-1" style="margin-left:1%">
+<img src="images/munis/lacruz.png" style="width:150%;max-width:1500%"  alt="Your alt text here">
+
+        </div><!-- /.col-sm-1 -->
+        
+
+        <div class="col-sm-1" style="margin-left:1%">
+ <img src="images/munis/los-nogales.png"  style="width:150%;max-width:1500%"  alt="Your alt text here">
+        </div><!-- /.col-sm-1 -->
+
+
+        <div class="col-sm-1" style="margin-left:1%">
+   <img src="images/munis/quillota.png" style="width:150%;max-width:1500%"  alt="Your alt text here">
+
+
+        </div><!-- /.col-sm-1 -->
+        <div class="col-sm-1" style="margin-left:1%">
+        <img src="images/munis/hijuela.png" style="width:150%;max-width:1500%"  alt="Your alt text here">
+
+        </div><!-- /.col-sm-1 -->
 </div>
 
 
-  <div class="container">
+    
 
+
+
+
+<div class="container">
+
+  
     <div class="row"> 
 
       <!--About Us-->
 
-      <div class="col-md-3 col-sm-2">
+      <div class="col-md-4 ">
 
        <!-- <div class="ft-logo"><img src="images/logo.png" alt="Your alt text here"></div> -->
 
-        <p>La Red Provincial de Quillota es una oficina
+        <p>La OMIL-Qta es una oficina
 
 perteneciente a la Municipalidad
 
@@ -79,7 +87,7 @@ orientación y vinculación laboral.</p>
 
       <!--Quick Links-->
 
-      <div class="col-md-3 col-sm-3">
+      <div class="col-md-2 ">
 
         <h5>Nuestra Web
 
@@ -115,7 +123,7 @@ orientación y vinculación laboral.</p>
 
       <!--Jobs By Industry-->
 
-      <div class="col-md-3 col-sm-3">
+      <div class="col-md-2">
 
         <h5>Enlaces Relevantes</h5>
 
@@ -147,7 +155,7 @@ orientación y vinculación laboral.</p>
 
       <!--Latest Articles-->
 
-      <div class="col-md-3 col-sm-3">
+      <div class="col-md-2">
 
         <h5>Contáctanos</h5>
 

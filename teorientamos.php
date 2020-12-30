@@ -49,7 +49,7 @@ $username=$_SESSION['username'];
         <h1 class="page-heading">Te Orientamos</h1>
       </div>
       
-      <div class="viewallbtn"><a href="#.">Ver todos los trabajos</a></div>
+      <div class="viewallbtn"><a href="listado_ofertas.php">Ver todos los trabajos</a></div>
       
     </div>
   </div>
@@ -127,9 +127,12 @@ oportunidades y amenazas que depara el mercado.
     <!-- title end -->
     
     
-    <a href="#."><i class="fa fa-play-circle-o" aria-hidden="true"></i></a> </div>
+        <a href="https://www.youtube.com/watch?v=wTCnwGzQ1vM&list=PLm-I0RaG9qZeai-deK3A1CFT_u4Yrjd2c"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
 </div>
 </div>
+
+
+ 
 
 <!--Footer--><?php  include("estructura/footer.php"); ?>
 <!--Footer end--> 

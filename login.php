@@ -4,8 +4,8 @@ require_once('backend/setup.php');
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
+<head><meta charset="euc-jp">
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Login</title>
@@ -35,6 +35,22 @@ require_once('backend/setup.php');
 <body>
 
   <?php
+  
+  require_once  'backend/vendor-fb/autoload.php'; 
+$fb = new Facebook\Facebook([
+  'app_id' => '307107977359709',
+  'app_secret' => '8948a67e7c287f65d56f49c3dbeb580b',
+  'default_graph_version' => 'v3.2',
+  ]);
+
+$helper = $fb->getRedirectLoginHelper();
+
+$permissions = ['email']; // Optional permissions
+$redirectURL = "https://".$_SERVER['SERVER_NAME']."/fb-callback.php";
+$loginUrl = $helper->getLoginUrl($redirectURL, $permissions);
+
+
+
   require('backend/config.php');
   
   // If form submitted, insert values into the database.
@@ -125,7 +141,15 @@ and password='" . md5($password) . "'";
             <div class="userccount">
               <div class="socialLogin">
                 <h5>Formulario de acceso</h5>
-                <a href="#." class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a href="<?php echo $google->createAuthUrl(); ?>" class="gp"><i class="fa fa-google-plus" aria-hidden="true"></i></a> <a href="#." class="tw"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                
+          <a class="fb" href="<?php print_r ($loginUrl); ?>" class="fa fa-facebook" >F</a> 
+          
+        
+
+                
+                
+                
+                <a href="<?php echo $google->createAuthUrl(); ?>" class="gp"><i class="fa fa-google-plus" aria-hidden="true"></i></a> 
               </div>
 
 
@@ -138,7 +162,7 @@ and password='" . md5($password) . "'";
                   </div>
                   <div class="formrow">
 
-                    <input name="password" id="password" type="password" class="form-control" placeholder="Contraseña">
+                    <input name="password" id="password" type="password" class="form-control" placeholder="Contrase単a">
                   </div>
                   <input class="btn" name="submit" type="submit" value="Login">
                 </div>
@@ -160,11 +184,7 @@ and password='" . md5($password) . "'";
     <!--Footer end-->
 
     <!--Copyright-->
-    <div class="copyright">
-      <div class="container">
-        <div class="bttxt">Copyright &copy; 2017 Your Company Name. All Rights Reserved. Design by: <a href="http://graphicriver.net/user/ecreativesol" target="_blank">eCreativeSolutions</a></div>
-      </div>
-    </div>
+   
 
     <!-- Bootstrap's JavaScript -->
     <script src="js/jquery-2.1.4.min.js"></script>
