@@ -23,11 +23,11 @@ $num_total_rows = '';
   <!-- Fav Icon -->
   <link rel="shortcut icon" href="favicon.ico">
 
-  <!-- Owl carousel --> 
-  <link href="css/owl.carousel.css" rel="stylesheet">
+  <!-- Owl carousel -->
+  <link href="css/owl.carousel.css" rel="stylesheet"> 
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Bootstrap 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -96,7 +96,7 @@ $num_total_rows = '';
         <!--step 1-->
         <li class="col-md-3 col-sm-4">
           <a href="register.php">
-            <div class="iconcircle"><i class="fa fa-user" aria-hidden="true"></i></div>
+            <img src="images/perfil.png" alt="perfil" width="70%">
 
             <h4>Crea una cuenta </h4>
 
@@ -113,7 +113,7 @@ $num_total_rows = '';
 
         <li class="col-md-3 col-sm-4">
 
-          <div class="iconcircle"><i class="fa fa-black-tie" aria-hidden="true"></i></div>
+          <img src="images/trabajo.png" alt="trabajo" width="70%">
 
           <h4>Buscar un trabajo</h4>
 
@@ -129,7 +129,7 @@ $num_total_rows = '';
 
         <li class="col-md-3 col-sm-4">
 
-          <div class="iconcircle"><i class="fa fa-file-text" aria-hidden="true"></i></div>
+         <img src="images/cv.png" alt="cv" width="70%">
 
           <h4>Envíe su CV
 
@@ -635,70 +635,45 @@ $num_total_rows = '';
   <div class="section" style="padding: 120px 0;">
 
     <div class="container">
-
-    
-
        <!-- title start -->
-       <div class="titleTop">
-        <div><span style="font-size: 150%; color:darkgrey">Aquí puedes ver</span></div>
-        <h1 style="margin-top: 1%;">Historias de Exitos</h1>
-      </div>
+         <div class="titleTop">
+            <div><span style="font-size: 150%; color:darkgrey">Aquí puedes ver</span></div>
+            <h1 style="margin-top: 1%;">Historias de Exitos</h1>
+         </div>
       <!-- title end -->
 
-  
-
-
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+         <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false" >
    
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" style="height: 400px;">
+              <div class="item active">
+                <embed src="https://drive.google.com/file/d/1_IzYuk4Gfiz9o6frywddwwtONTrbVCBl/preview" width="100%" style="height: 400px;">
+              </div>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" style="height: 100%">
-      <div class="item active"  >
-        <iframe src="https://drive.google.com/file/d/1_IzYuk4Gfiz9o6frywddwwtONTrbVCBl/preview" style="width: 100%;
-    height: -webkit-fill-available; "  ></iframe>
-      </div>
+              <div class="item">
+                 <embed src="https://drive.google.com/file/d/13dLSEmpa13JAthalkIuea4h6cP_okwlV/preview" width="100%" style="height: 400px;">
+              </div>
+            
+              <div class="item">
+                <embed src="https://drive.google.com/file/d/1hZb9vBJshH_knI9VxB1ghLngKL4QYfpY/preview" width="100%" style="height: 400px;">
+              </div>
+            </div>
 
-      <div class="item">
-       <iframe src="https://drive.google.com/file/d/13dLSEmpa13JAthalkIuea4h6cP_okwlV/preview" style="width: 100%;
-    height: -webkit-fill-available; "></iframe>
-      </div>
-    
-      <div class="item">
-        <iframe src="https://drive.google.com/file/d/1hZb9vBJshH_knI9VxB1ghLngKL4QYfpY/preview"  style="width: 100%;
-    height: -webkit-fill-available; " ></iframe>
-      </div>
-    </div>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+        </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
-
-
-
-        <!--user 1 end-->
-
-
-
-        <!--user 2 Start-->
-
-
-        <!--user 2 end-->
-
-      </ul>
 
     </div>
 
   </div>
-
   <!-- Testimonials End -->
 
 
@@ -764,9 +739,6 @@ $num_total_rows = '';
   </div>
 
   <!-- App End -->
-
-
-
   <!--Footer-->
 
   <?php include('estructura/footer.php'); ?>

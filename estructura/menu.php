@@ -12,7 +12,7 @@
      
       <div class="col-lg-12 col-sm-12 col-xs-12 ml-2">
         <!-- Nav start -->
-         <img src="images/logo.png" alt=""  width="8%" style="margin-left: 5%;"/>
+         <a href="index.php"><img src="images/logo.png" alt=""  width="8%" style="margin-left: 5%;"/></a>
         <div class="navbar navbar-default" role="navigation" style="margin-top: 1%;">
           <div class="navbar-collapse collapse" id="nav-main">
             <ul class="nav navbar-nav">
@@ -23,7 +23,7 @@
                   <li><a href="listado_ofertas.php">Lista de Ofertas de empleo</a></li>
                 </ul> 
               </li>
-              <li><a href="contactanos.php">TALLERES</a></li>
+              <li><a href="https://testingmetasoft.cl/quillota/video-llamada/video-conferencia/">TALLERES</a></li>
               <li><a href="contactanos.php">CONTÁCTANOS</a></li>
 
               <li class="postjob"><a href="subircv.php">ENVIAR CURRICULUM</a></li>

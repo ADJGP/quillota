@@ -6,7 +6,7 @@
 
 <!-- Three columns of text below the carousel -->
 
-      <div class="row " style="margin-left:20%">
+      <div class="row " style="margin-left:20%; margin-bottom:2%;">
         <div class="col-sm-1" style="margin-left:1%">
 <img src="images/logo.png" style="width:150%;max-width:1500%"  alt="Your alt text here">
 
@@ -59,17 +59,9 @@
 
        <!-- <div class="ft-logo"><img src="images/logo.png" alt="Your alt text here"></div> -->
 
-        <p>La OMIL-Qta es una oficina
+        <p class='text-justify'>Somos la Red Territorial de la Provincia de Quillota, compuesta por las oficinas OMIL de Quillota – La Cruz – La Calera – Hijuelas – Nogales y El Melón.
 
-perteneciente a la Municipalidad
-
-de Quillota. Su función es
-
-intermediar entre la Oferta y demanda de empleo a través de
-
-una gestión de información,
-
-orientación y vinculación laboral.</p>
+Cada uno de nuestros equipos está compuesto por profesionales del área social y organizacional, quienes tienen por finalidad intermediar laboralmente a los ciudadanos de cada ciudad, entregando herramientas de empleabilidad, información laboral relevante, ayuda y acompañamiento en el proceso de búsqueda de trabajo.</p>
 
         
 
