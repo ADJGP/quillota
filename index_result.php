@@ -26,7 +26,7 @@ $num_total_rows = $row['total_ofertas'];
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title><?php echo $_SESSION['sesion']; ?></title>
+  <title>Portal virtual de trabajo</title>
 
   <!-- Fav Icon -->
   <link rel="shortcut icon" href="favicon.ico">
