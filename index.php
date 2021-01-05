@@ -699,22 +699,14 @@ $num_total_rows = '';
         <div class="col-md-7 col-sm-6">
 
           <!--app info Start-->
-
           <div class="titleTop">
 
-            <div class="subtitle">Descarga Ahora </div>
-
+            <div class="subtitle">Descargar Ahora </div>
             <h3>Nuestra aplicación</h3>
-
             <div class="subtitle"> Un mundo de oportunidades en tus manos</div>
-
-
-
           </div>
 
           <div class="subtitle2">Nuestra provincia llena de oportunidades</div>
-
-          <p>Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non, semper orci. Curabitur blandit, diam ut ornare ultricies.</p>
 
           <div class="appbtn">
 
