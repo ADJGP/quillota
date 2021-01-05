@@ -6,39 +6,37 @@
 
 <!-- Three columns of text below the carousel -->
 
-      <div class="row " style="margin-left:20%; margin-bottom:2%;">
+<div class="row " style="margin-left:20%; margin-bottom:2%;">
         <div class="col-sm-1" style="margin-left:1%">
-<img src="images/logo.png" style="width:150%;max-width:1500%"  alt="Your alt text here">
-
-        </div><!-- /.col-sm-1 -->
-        <div class="col-sm-1" style="margin-left:1%">
-         <img src="images/Logo-oficina-municipal-sence-b-e-421x416px.png" style="width:150%;max-width:1500%"  alt="Your alt text here"> 
-        
-        </div><!-- /.col-sm-1 -->
-        <div class="col-sm-1" style="margin-left:1%">
- <img src="images/munis/lacalera.png"  style="width:150%;max-width:1500%"  alt="Your alt text here">
-
+          <img src="images/logo.png"  alt="logo" width="100%">
         </div><!-- /.col-sm-1 -->
 
-<div class="col-sm-1" style="margin-left:1%">
-<img src="images/munis/lacruz.png" style="width:150%;max-width:1500%"  alt="Your alt text here">
+        <div class="col-sm-1" style="margin-left:1%">
+         <img src="images/Logooficinamunicipal.png" width="100%"  alt="Your alt text here"> 
+        </div><!-- /.col-sm-1 -->
 
+        <div class="col-sm-1" style="margin-left:1%">
+         <img src="images/Logolacalera.png"  width="100%"  alt="Your alt text here">
+        </div><!-- /.col-sm-1 -->
+
+        <div class="col-sm-1" style="margin-left:1%">
+          <img src="images/Logolacruz.png" width="100%"  alt="Your alt text here">
         </div><!-- /.col-sm-1 -->
         
-
         <div class="col-sm-1" style="margin-left:1%">
- <img src="images/munis/los-nogales.png"  style="width:150%;max-width:1500%"  alt="Your alt text here">
+          <img src="images/Logonogales.png"  width="100%"  alt="Your alt text here">
         </div><!-- /.col-sm-1 -->
 
-
         <div class="col-sm-1" style="margin-left:1%">
-   <img src="images/munis/quillota.png" style="width:150%;max-width:1500%"  alt="Your alt text here">
-
-
+          <img src="images/logo-municipalidad-oficial.png" width="100%" alt="Your alt text here">
         </div><!-- /.col-sm-1 -->
-        <div class="col-sm-1" style="margin-left:1%">
-        <img src="images/munis/hijuela.png" style="width:150%;max-width:1500%"  alt="Your alt text here">
 
+        <div class="col-sm-1" style="margin-left:1%">
+         <img src="images/Logohijuela.png" width="100%"  alt="Your alt text here">
+        </div><!-- /.col-sm-1 -->
+
+        <div class="col-sm-1" style="margin-left:1%">
+         <img src="images/logosence.png" width="100%" alt="Your alt text here">
         </div><!-- /.col-sm-1 -->
 </div>
 
