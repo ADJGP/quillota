@@ -703,10 +703,8 @@ $num_total_rows = '';
 
             <div class="subtitle">Descargar Ahora </div>
             <h3>Nuestra aplicación</h3>
-            <div class="subtitle"> Un mundo de oportunidades en tus manos</div>
+            <div class="subtitle"> Nuestra provincia llena de oportunidades</div>
           </div>
-
-          <div class="subtitle2">Nuestra provincia llena de oportunidades</div>
 
           <div class="appbtn">
 

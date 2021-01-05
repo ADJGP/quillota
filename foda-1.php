@@ -63,83 +63,71 @@ include("backend/config.php");
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-    <div class="container">
-  <div class="row">
-    <div class="col">
-      <!-- <input style="width: 50%;" type="text" class="form-control" > -->
-    </div>
-    <div class="col">
-     <!-- <input type="text" class="form-control" > -->
-    </div>
-  </div>
-</div>
+    
+           <?php
+              if(isset($_POST['add'])){
+                $amenza        = mysqli_real_escape_string($con,(strip_tags($_POST["amenaza"],ENT_QUOTES)));//Escanpando caracteres 
+                $oportunidades         = mysqli_real_escape_string($con,(strip_tags($_POST["oportunidades"],ENT_QUOTES)));//Escanpando caracteres 
+                $debilidades  = mysqli_real_escape_string($con,(strip_tags($_POST["debilidades"],ENT_QUOTES)));//Escanpando caracteres 
+                $fortaleza  = mysqli_real_escape_string($con,(strip_tags($_POST["fortaleza"],ENT_QUOTES)));//Escanpando caracteres 
+                $fecha= date("d/m/yy");
+              
+                
+              
 
-
-
-<?php
-      if(isset($_POST['add'])){
-        $amenza        = mysqli_real_escape_string($con,(strip_tags($_POST["amenaza"],ENT_QUOTES)));//Escanpando caracteres 
-        $oportunidades         = mysqli_real_escape_string($con,(strip_tags($_POST["oportunidades"],ENT_QUOTES)));//Escanpando caracteres 
-        $debilidades  = mysqli_real_escape_string($con,(strip_tags($_POST["debilidades"],ENT_QUOTES)));//Escanpando caracteres 
-        $fortaleza  = mysqli_real_escape_string($con,(strip_tags($_POST["fortaleza"],ENT_QUOTES)));//Escanpando caracteres 
-        $fecha= date("d/m/yy");
-      
-        
-      
-
-        $cek = mysqli_query($con, "SELECT * FROM formfoda");
-        if(mysqli_num_rows($cek) >= 0){
-           
-            $insert = mysqli_query($con, "INSERT INTO formfoda( fortaleza, amenza, debilidades, oportunidades, creado) VALUES('$amenza','$oportunidades','$debilidades','$fortaleza','$fecha')")  or die(mysqli_error());
-            if($insert){
-              echo '<script> alert("Guardado"); </script>';
-            }else{
-              echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. No se pudo guardar los datos !</div>';
-            }
-           
-        }else{
-          echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. código exite!</div>';
-        }
-      }
-      ?>
+                $cek = mysqli_query($con, "SELECT * FROM formfoda");
+                if(mysqli_num_rows($cek) >= 0){
+                  
+                    $insert = mysqli_query($con, "INSERT INTO formfoda( fortaleza, amenza, debilidades, oportunidades, creado) VALUES('$amenza','$oportunidades','$debilidades','$fortaleza','$fecha')")  or die(mysqli_error());
+                    if($insert){
+                      echo '<script> alert("Guardado"); </script>';
+                    }else{
+                      echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. No se pudo guardar los datos !</div>';
+                    }
+                  
+                }else{
+                  echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. código exite!</div>';
+                }
+              }
+          ?>
 
 
 
 
         <!-- <IMAGENES FODA" > -->
-<form class="form-horizontal" action="" method="post">
+<form action="" method="post">
 
   <div class="contenedor-foda">
 
-         <img src="6.png" href="#" class="fondo-gris">
-         <img src="5.png" href="#" class="imagen-centro">
-         <img src="2.png" href="#" class="imagen-rosa">
+         <img src="6.png" href="#" class="fondo-gris" style="margin-left: 21%;">
+         <img src="5.png" href="#" class="imagen-centro" style="margin-left: 20%;">
+         <img src="2.png" href="#" class="imagen-rosa" style="margin-left: 20%;">
 
-            <div class="texto-rosa">
+            <div class="texto-rosa" style="margin-left: 100%; margin-right:-20%">
               <label for="w3review"></label>
               <textarea id="w3review" name="amenaza" rows="5" cols="20">
               </textarea>
             </div>
 
-         <img src="1.png" href="#" class="imagen-naranja" title="(Situación que provienen del entorno atentando contra la estabilidad laboral).">
+         <img src="1.png" href="#" class="imagen-naranja" title="(Situación que provienen del entorno atentando contra la estabilidad laboral)." style="margin-left: 20%;">
 
-            <div class="texto-naranja">
+            <div class="texto-naranja" style="margin-left: 20%;">
               <label for="w3review"></label>
               <textarea id="w3review" name="fortaleza" rows="5" cols="20">
               </textarea>
             </div>
 
-         <img src="3.png" href="#" class="imagen-morada" title="(Factores que resultan positivos y favorables en el entorno laboral).">
+         <img src="3.png" href="#" class="imagen-morada" title="(Factores que resultan positivos y favorables en el entorno laboral)." style="margin-left: 20%;">
 
-            <div class="texto-morada">
+            <div class="texto-morada" style="margin-left: 100%; margin-right:-20%">
               <label for="w3review"></label>
               <textarea id="w3review" name="oportunidades" rows="5" cols="20">
               </textarea>
             </div>
 
-         <img src="4.png" href="#" class="imagen-azul" title="(Capacidades y resultados con que cuenta la empresa).">
+         <img src="4.png" href="#" class="imagen-azul" title="(Capacidades y resultados con que cuenta la empresa)." style="margin-left: 20%;">
 
-            <div class="texto-azul">
+            <div class="texto-azul" style="margin-left: 20%;">
               <label for="w3review"></label>
               <textarea id="w3review" name="debilidades" rows="5" cols="20">
               </textarea>
@@ -147,134 +135,30 @@ include("backend/config.php");
 
   </div>
 
-<div class="viewallbtn">
-           
+          <div class="viewallbtn" style="margin-left: 20%;">
            <input type="submit" name="add" class="btn btn-sm btn-primary" value="Guardar datos">
-         </div>
+          </div>
 </form>
 
 
-   <div class="container">
 
-
-
-  <div class="row">
-
-  </div>
-
-
-
-</div>
-
-
- <!--<input type="text" class="form-control" >
-
-
-
-        <input type="text" class="form-control" > -->
+ 
          
       </div>
-
-
     </div>
-
-
-
   </div>
 
-    <a href="#."><i class="fa fa-play-circle-o" aria-hidden="true"></i></a> </div>
 </div>
-</div>
+
 <!--Footer-->
-
-
-
 <?php include("estructura/footer.php"); ?>
 
-
-
-<!--Footer end--> 
-
-
-
-
-
-
-
-<!--Copyright
-
-
-
-<div class="copyright">
-
-
-
-  <div class="container">
-
-
-
-    <div class="bttxt">Copyright &copy; 2017 Your Company Name. All Rights Reserved. Design by: <a href="http://graphicriver.net/user/ecreativesol" target="_blank">eCreativeSolutions</a></div>
-
-
-
-  </div>
-
-
-
-</div>
-
-
-
-
-
-
-
--->
-
-
-
-
-
-
-
 <!-- Bootstrap's JavaScript --> 
-
-
-
 <script src="js/jquery-2.1.4.min.js"></script> 
-
-
-
 <script src="js/bootstrap.min.js"></script> 
-
-
-
-
-
-
-
 <!-- Owl carousel --> 
-
-
-
 <script src="js/owl.carousel.js"></script> 
-
-
-
-
-
-
-
 <!-- Custom js --> 
-
-
-
 <script src="js/script.js"></script>
-
-
-
 </body>
-
-
-
 </html>

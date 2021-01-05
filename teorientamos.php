@@ -62,7 +62,7 @@ $username=$_SESSION['username'];
     <div class="row">
       <div class="col-md-7">
         <h2>Análisis Foda </h2>
-        <p>El módulo matriz FODA es un espacio donde podrán analizar y planificar los objetivos de tu búsqueda de empleo, es una instancia
+        <p class='text-justify'>El módulo matriz FODA es un espacio donde podrán analizar y planificar los objetivos de tu búsqueda de empleo, es una instancia
 para conocerse mejor y trabajar los puntos bajos en el ámbito laboral y personal.
 <br>
 <br>
@@ -84,32 +84,84 @@ oportunidades y amenazas que depara el mercado.
     <div class="container">
       <div class="main-heading" style="color:black">Material Complementario </div>
     
-      <ul class="row whatList">
-        <li class="col-md-3 col-sm-6">
-          <div class="iconWrap">
-           
-          </div>
-          <img src="images/materialcomplementario1.jpg">
-        </li>
-        <li class="col-md-3 col-sm-6">
-          <div class="iconWrap">
-            
-          </div>
-          <img src="images/materialcomplementario2.jpg">
-        </li>
-        <li class="col-md-3 col-sm-6">
-          <div class="iconWrap">
-            
-          </div>
-          <img src="images/materialcomplementario3.jpg">
-        </li>
-         <li class="col-md-3 col-sm-6">
-          <div class="iconWrap">
-           
-          </div>
-          <img src="images/materialcomplementario4.jpg">
-        </li>
-      </ul>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false" >
+   
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" style="height: 400px;">
+              <div class="item active">
+                <embed src="pdf/Actitudes-positivas.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Claves-para-el-empleo-Inf.carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Como-buscar-empleo-Inf.carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Competencias-valoradas-Inf.carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Comunicación-en-el-trabajo-Inf.carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Comunicación-no-vebal-Inf.carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Contrato-laboral-Inf.-carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Contrato-laboral-Tríp.-carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+
+              <div class="item">
+                <embed src="pdf/Elaboración-de-CV-Inf.carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Elaboración-de-CV-Tríp.-carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Entrevista-Laboral-Inf.-carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Entrevista-por-competencias-Inf.-carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+
+              <div class="item">
+                <embed src="pdf/Inclusión-Laboral-Tríp.-carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Planificacion-Ocupacional-Inf.carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Presentación-personal-Inf.oficio(1).pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Resolución-de-conflictos-Inf.-carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Selección-desde-la-empresa -Trip.-carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Servicios-de-empleabilidad-Inf.-carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Trabajo-en-equipo-Inf.-carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+              <div class="item">
+                <embed src="pdf/Uso-de-TIC´s-Inf.-carta.pdf" width="100%" style="height: 400px;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+            </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+        </div>
     </div>
   </div>
   
@@ -118,9 +170,9 @@ oportunidades y amenazas que depara el mercado.
   <div class="container"> 
     <!-- title start -->
     <div class="titleTop">
-       <div class="subtitle">Aquí te enseñamos a realizar un curriculum vitae, ideal para iniciar un nuevo trabajo.</div>
-      <h3>CONSTRUCCIÓN DE CV
-</h3>
+       <div style="color: white; font-size:medium">Aquí te enseñamos a realizar un curriculum vitae, ideal para iniciar un nuevo trabajo.</div>
+       <br>
+      <h3>CONSTRUCCIÓN DE CV</h3>
      
       
     </div>
