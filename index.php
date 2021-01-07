@@ -53,7 +53,7 @@ $num_total_rows = '';
       <div class="searchbar row">
         <form method="post" action="index_result.php">
         <div class="col-md-5">
-            <input required name="keywords" type="text" class="form-control mb-2" id="inlineFormInput" />
+            <input required name="keywords" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Ejemplo: Repartidor" />
         </div>
         <div class="col-md-3">
           <select required name="tipo" class="form-control" >
@@ -97,48 +97,31 @@ $num_total_rows = '';
         <li class="col-md-3 col-sm-4">
           <a href="register.php">
             <img src="images/perfil.png" alt="perfil" width="70%">
-
-            <h4>Crea una cuenta </h4>
-
-            <!--<p>Regístrate y conoce todas las funcionalidades y material informativo que te brinda la plataforma.</p>-->
+             <h4>Crea una cuenta </h4>
           </a>
-
         </li>
-
         <!--step 1 end-->
 
 
 
         <!--step 2-->
-
         <li class="col-md-3 col-sm-4">
-
-          <img src="images/trabajo.png" alt="trabajo" width="70%">
-
-          <h4>Buscar un trabajo</h4>
-
-          <!--<p>Infórmate con el material complementario y busca trabajo através de los medios que te brinda la plataforma.</p>-->
-
+         <a href="listado_ofertas.php">
+           <img src="images/trabajo.png" alt="trabajo" width="70%">
+             <h4>Buscar un trabajo</h4>
+         </a>
         </li>
-
         <!--step 2 end-->
 
 
 
         <!--step 3-->
-
         <li class="col-md-3 col-sm-4">
-
-         <img src="images/cv.png" alt="cv" width="70%">
-
-          <h4>Envíe su CV
-
-          </h4>
-
-          <!--<p>Utiliza la funcionalidad que te brindamos para enviar tu curriculum por medio de nuestra plataforma.</p>-->
-
+         <a href="subircv.php">
+            <img src="images/cv.png" alt="cv" width="70%">
+             <h4>Envíe su CV</h4>
+         </a>
         </li>
-
         <!--step 3 end-->
 
       </ul>
@@ -288,299 +271,37 @@ $num_total_rows = '';
   <!-- Latest Jobs start -->
 
   <div class="section greybg">
-
     <div class="container">
-
       <!-- title start -->
-
       <div class="titleTop">
-
         <div class="subtitle">Aquí puedes ver </div>
-
         <h3>Últimos trabajos </h3>
-
       </div>
-
       <!-- title end -->
-
-
+      <?php $o = $con->query("SELECT * FROM ofertas ORDER BY id DESC LIMIT 0, 3"); ?>
 
       <ul class="jobslist row">
 
+      <?php while ($row = $o->fetch_assoc()) { ?>
         <!--Job 1-->
-
         <li class="col-md-4 col-sm-6">
-
           <div class="jobint">
-
             <div class="row">
-
               <div class="col-md-3 col-sm-3"><img src="images/employers/emplogo1.jpg" alt="Job Name" /></div>
-
               <div class="col-md-9 col-sm-9">
-
-                <h4><a href="#.">Technical Database Engineer</a></h4>
-
-                <div class="company"><a href="#.">Datebase Management Company</a></div>
-
-                <div class="jobloc"><label class="fulltime">Full Time</label> - <span>New York</span></div>
-
+                <h4><?php echo $row['titulo'] ?></h4>
+                <div class="company"><a href="#."><?php echo $row['detalles'] ?></div>
+                <div class="jobloc"><label class="fulltime">Disponible</label></div>
               </div>
-
             </div>
-
           </div>
-
         </li>
-
         <!--Job end-->
-
-
-
-        <!--Job 2-->
-
-        <li class="col-md-4 col-sm-6">
-
-          <div class="jobint">
-
-            <div class="row">
-
-              <div class="col-md-3 col-sm-3"><img src="images/employers/emplogo11.jpg" alt="Job Name" /></div>
-
-              <div class="col-md-9 col-sm-9">
-
-                <h4><a href="#.">Technical Database Engineer</a></h4>
-
-                <div class="company"><a href="#.">Datebase Management Company</a></div>
-
-                <div class="jobloc"><label class="freelance">Free Lancer</label> - <span>New York</span></div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </li>
-
-        <!--Job end-->
-
-
-
-        <!--Job 3-->
-
-        <li class="col-md-4 col-sm-6">
-
-          <div class="jobint">
-
-            <div class="row">
-
-              <div class="col-md-3 col-sm-3"><img src="images/employers/emplogo12.jpg" alt="Job Name" /></div>
-
-              <div class="col-md-9 col-sm-9">
-
-                <h4><a href="#.">Technical Database Engineer</a></h4>
-
-                <div class="company"><a href="#.">Datebase Management Company</a></div>
-
-                <div class="jobloc"><label class="partTime">Part Time</label> - <span>New York</span></div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </li>
-
-        <!--Job end-->
-
-
-
-        <!--Job 4-->
-
-        <li class="col-md-4 col-sm-6">
-
-          <div class="jobint">
-
-            <div class="row">
-
-              <div class="col-md-3 col-sm-3"><img src="images/employers/emplogo13.jpg" alt="Job Name" /></div>
-
-              <div class="col-md-9 col-sm-9">
-
-                <h4><a href="#.">Technical Database Engineer</a></h4>
-
-                <div class="company"><a href="#.">Datebase Management Company</a></div>
-
-                <div class="jobloc"><label class="freelance">Free Lancer</label> - <span>New York</span></div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </li>
-
-        <!--Job end-->
-
-
-
-        <!--Job 5-->
-
-        <li class="col-md-4 col-sm-6">
-
-          <div class="jobint">
-
-            <div class="row">
-
-              <div class="col-md-3 col-sm-3"><img src="images/employers/emplogo14.jpg" alt="Job Name" /></div>
-
-              <div class="col-md-9 col-sm-9">
-
-                <h4><a href="#.">Technical Database Engineer</a></h4>
-
-                <div class="company"><a href="#.">Datebase Management Company</a></div>
-
-                <div class="jobloc"><label class="fulltime">Full Time</label> - <span>New York</span></div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </li>
-
-        <!--Job end-->
-
-
-
-        <!--Job 6-->
-
-        <li class="col-md-4 col-sm-6">
-
-          <div class="jobint">
-
-            <div class="row">
-
-              <div class="col-md-3 col-sm-3"><img src="images/employers/emplogo15.jpg" alt="Job Name" /></div>
-
-              <div class="col-md-9 col-sm-9">
-
-                <h4><a href="#.">Technical Database Engineer</a></h4>
-
-                <div class="company"><a href="#.">Datebase Management Company</a></div>
-
-                <div class="jobloc"><label class="fulltime">Full Time</label> - <span>New York</span></div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </li>
-
-        <!--Job end-->
-
-
-
-        <!--Job 7-->
-
-        <li class="col-md-4 col-sm-6">
-
-          <div class="jobint">
-
-            <div class="row">
-
-              <div class="col-md-3 col-sm-3"><img src="images/employers/emplogo16.jpg" alt="Job Name" /></div>
-
-              <div class="col-md-9 col-sm-9">
-
-                <h4><a href="#.">Technical Database Engineer</a></h4>
-
-                <div class="company"><a href="#.">Datebase Management Company</a></div>
-
-                <div class="jobloc"><label class="partTime">Part Time</label> - <span>New York</span></div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </li>
-
-        <!--Job end-->
-
-
-
-        <!--Job 8-->
-
-        <li class="col-md-4 col-sm-6">
-
-          <div class="jobint">
-
-            <div class="row">
-
-              <div class="col-md-3 col-sm-3"><img src="images/employers/emplogo2.jpg" alt="Job Name" /></div>
-
-              <div class="col-md-9 col-sm-9">
-
-                <h4><a href="#.">Technical Database Engineer</a></h4>
-
-                <div class="company"><a href="#.">Datebase Management Company</a></div>
-
-                <div class="jobloc"><label class="freelance">Free Lancer</label> - <span>New York</span></div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </li>
-
-        <!--Job end-->
-
-
-
-        <!--Job 9-->
-
-        <li class="col-md-4 col-sm-6">
-
-          <div class="jobint">
-
-            <div class="row">
-
-              <div class="col-md-3 col-sm-3"><img src="images/employers/emplogo3.jpg" alt="Job Name" /></div>
-
-              <div class="col-md-9 col-sm-9">
-
-                <h4><a href="#.">Technical Database Engineer</a></h4>
-
-                <div class="company"><a href="#.">Datebase Management Company</a></div>
-
-                <div class="jobloc"><label class="fulltime">Full Time</label> - <span>New York</span></div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </li>
-
-        <!--Job end-->
-
+      <?php } ?>
       </ul>
 
       <!--view button-->
-
-      <div class="viewallbtn"><a href="#.">Ver todos los trabajos</a></div>
-
+      <div class="viewallbtn"><a href="listado_ofertas.php">Ver todos los trabajos</a></div>
       <!--view button end-->
 
     </div>
@@ -601,25 +322,13 @@ $num_total_rows = '';
 
       <!-- title start -->
 
-      <div class="titleTop">
-
-        <div style="margin-bottom: 1%;font-size: 120%; color:white">Encuentra el trabajo ideal, con la ayuda de nuestro equipo profesional</div>
-
-        <h1 style="font-size: 500%; color:white">AQUÍ TE ORIENTAMOS</h1>
-        <button class="btn btn-primary btn-xl" style="font-size: 150%; margin-top:10%">Solicitar Entrevista</button>
-
-
-
-
-
-      </div>
-
+            <div class="titleTop">
+              <div style="margin-bottom: 1%;font-size: 120%; color:white">Encuentra el trabajo ideal, con la ayuda de nuestro equipo profesional</div>
+                <h1 style="font-size: 500%; color:white">AQUÍ TE ORIENTAMOS</h1>
+              <a class="btn btn-primary btn-xl" style="font-size: 150%; margin-top:10%; background-color:blue" href="agendarentrevista.php">Solicitar Entrevista</a>
+            </div>
       <!-- title end -->
-
-
-
-      <!--<p>Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non, semper orci.</p>-->
-  </div>
+    </div>
         
   </div>
   <!-- Video end -->
