@@ -259,7 +259,7 @@ $num_total_rows = '';
 
       <!--<p>Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non, semper orci.</p>-->
 
-      <a href="#."><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
+      <a href="videoteca.php"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
     </div>
 
   </div>
@@ -301,7 +301,7 @@ $num_total_rows = '';
       </ul>
 
       <!--view button-->
-      <div class="viewallbtn"><a href="listado_ofertas.php">Ver todos los trabajos</a></div>
+      <div class='text-center'><a class="btn btn-primary btn-xl" style="font-size: 150%; margin-top:5%; background-color:blue" href="listado_ofertas.php">Ver todos los trabajos</a></div>
       <!--view button end-->
 
     </div>

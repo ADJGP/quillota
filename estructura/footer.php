@@ -56,7 +56,7 @@
                   Cada uno de nuestros equipos está compuesto por profesionales del área social y organizacional, quienes tienen por finalidad intermediar laboralmente a los ciudadanos de cada ciudad,
                   entregando herramientas de empleabilidad, información laboral relevante, ayuda y acompañamiento en el proceso de búsqueda de trabajo.</p>
                   <!-- Social Icons -->
-                  <div class="social"> <a href="#." target="_blank"> <i class="fa fa-facebook-square" aria-hidden="true"></i></a> <a href="#." target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a> <a href="#." target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a> <a href="#." target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <a href="#." target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a> </div>
+                  <div style='margin-top:5%'> <a href="#." target="_blank"><img src="images/Facebook.png"  width="10%"></a> <a href="#." target="_blank"><img src="images/Twitter.png" style="margin-left: 5%;" width="10%"></a> <a href="#." target="_blank"><img src="images/Instagram.png" style="margin-left: 5%;" width="10%"></a> <a href="#." target="_blank"><img src="images/Youtube.png" style="margin-left: 5%;" width="10%"></a></div>
                   <!-- Social Icons end --> 
                 </div>
 
