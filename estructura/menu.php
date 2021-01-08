@@ -3,12 +3,11 @@
   <div class="container">
 
     <div class="row">
-      <!--<div class="col-md-2 col-sm-3 col-xs-12"> <a href="index.php" class="logo"><img src="images/logo.png" alt=""  width="30%"/></a>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         </div>
         <div class="clearfix"></div>
-      </div>-->
+      </div>
      
       <div class="col-lg-12 col-sm-12 col-xs-12 ml-2">
         <!-- Nav start -->
