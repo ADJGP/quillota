@@ -1127,7 +1127,7 @@ background: url(../images/2410572_Artboard.png) no-repeat top;
 }
 .videowraper2 a {
 	display: inline-block;
-	opacity: .5;
+	/*opacity: .5;*/
 	margin-top: 20px;
 	font-size: 100px;
 	color: #fff;
