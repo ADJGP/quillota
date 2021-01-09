@@ -17,6 +17,8 @@ $result = $con->query("SELECT COUNT(*) as total_ofertas FROM ofertas WHERE titul
 $row = $result->fetch_assoc();
 $num_total_rows = $row['total_ofertas'];
 
+$categorias = $con->query('SELECT * FROM dic_rubros');
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -66,8 +68,9 @@ $num_total_rows = $row['total_ofertas'];
         <div class="col-md-3">
           <select required name="tipo" class="form-control" >
             <option disabled selected value="null">Cualquier categoría</option>
-            <option value="1">Agricultura</option>
-            <option value="8">Educación </option>
+            <?php while ($r = $categorias->fetch_assoc()) { ?>
+            <option value='<?php echo $r["id_rubro"]; ?>'><?php echo $r["rubro"]; ?></option>
+            <?php } ?>
           </select>
         </div>
         <div class="col-md-2">

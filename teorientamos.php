@@ -179,7 +179,7 @@ oportunidades y amenazas que depara el mercado.
     <!-- title end -->
     
     
-        <a href="https://www.youtube.com/watch?v=wTCnwGzQ1vM&list=PLm-I0RaG9qZeai-deK3A1CFT_u4Yrjd2c"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
+        <a href="videoteca.php"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
 </div>
 </div>
 

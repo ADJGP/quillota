@@ -8,6 +8,7 @@ include("backend/config.php");
 session_start();
 $num_total_rows = '';
 
+$categorias = $con->query('SELECT * FROM dic_rubros');
 
 ?>
 <!DOCTYPE html>
@@ -58,8 +59,9 @@ $num_total_rows = '';
         <div class="col-md-3">
           <select required name="tipo" class="form-control" >
             <option disabled selected value="null">Cualquier categoría</option>
-            <option value="1">Agricultura</option>
-            <option value="8">Educación </option>
+            <?php while ($row = $categorias->fetch_assoc()) { ?>
+            <option value='<?php echo $row["id_rubro"]; ?>'><?php echo $row["rubro"]; ?></option>
+            <?php } ?>
           </select>
         </div>
         <div class="col-md-2">
